@@ -1,0 +1,14 @@
+h1 {
+  padding: 10px;
+  background-color: blue;
+  color: #fff;
+}
+#container {
+    width:600px;
+    margin: 20px ; auto;
+}
+#container{
+    display: inline-block;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');

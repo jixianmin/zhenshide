@@ -1,0 +1,55 @@
+#container {
+  width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+.header {
+  background-image: url("http://www.outdoornews.co.kr/news/photo/202009/32077_90504_551.jpg");
+  background-size: cover;
+  padding-top: 200px;
+  margin-bottom: 5px;
+}
+.header-container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 40px;
+  margin-top: 200px;
+}
+.header-container > h1 {
+  color: white;
+}
+.header-container > p {
+  color: blanchedalmond;
+  font-weight: bold;
+}
+/* html순서를 따라 css도 작성한다 이렇게 순서대로 안하면 나중에 수정시에 힘들어짐*/
+.main-title {
+  background: black;
+  color: white;
+  padding: 10px;
+}
+h2 {
+  color: red;
+  font-size: 1.5em;
+  text-align: center;
+}
+section p {
+  font-size: 1.2em;
+  line-height: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+/* >은 아들만 그냥 p만했으면 손자까지? */
+.accent {
+  color: #0000ff;
+}
+/* 205페이지 16진법을 색상을 표시 */
+.smalltext {
+  font-size: 0.7em;
+}
+div {
+  border: 1px solid #222;
+  padding: 0px;
+  margin-bottom: 0px;
+}

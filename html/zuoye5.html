@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      td {
+        border: 1px solid;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        border: 1px solid;
+        padding: 10px;
+      }
+      table {
+        caption-side: bottom;
+        border-collapse: collapse;
+      }
+      th {
+        background-color: rgb(110, 103, 103);
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <colgroup>
+        <col style="background-color: gray; width: 150px" />
+        <col />
+        <!-- <col>특정 열에 스타일 속성 지정하기 -->
+        <col style="width: 150px" />
+      </colgroup>
+      <rpwgroup>
+        <row style="background-color: #eee" />
+        <row />
+      </rpwgroup>
+      <tr>
+        <th>구분</th>
+        <th>성인</th>
+        <th>독서자</th>
+      </tr>
+      <tr>
+        <th>종이책</th>
+        <td>6.1권</td>
+        <td>11.8권</td>
+      </tr>
+      <tr>
+        <th>전자책</th>
+        <td>1.2권</td>
+        <td>7.1권</td>
+      </tr>
+      <tr>
+        <th>오디오북</th>
+        <td>0.2권</td>
+        <td>5.5권</td>
+      </tr>
+      <caption>
+        2019 국민 독서 실태
+      </caption>
+    </table>
+  </body>
+</html>
