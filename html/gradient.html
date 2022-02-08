@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page306</title>
+    <style>
+      .grad {
+        width: 400px;
+        height: 300px;
+      }
+      #grad1 {
+        background: blue;
+        background: linear-gradient(to right bottom, blue, white);
+      }
+      #grad2 {
+        background: #f00;
+        background: linear-gradient(45deg, #f00, #fff);
+      }
+      #grada {
+        background: #06f;
+        background: linear-gradient(to bottom, #06f, white 30%, #06f);
+      }
+      #gradb {
+        background: red;
+        background: radial-gradient(white, yellow, red);
+      }
+      #gradc {
+        background: red;
+        background: radial-gradient(circle, white, yellow, red);
+      }
+      #gradd {
+        background: blue;
+        background: radial-gradient(circle at 20% 20%, white, blue);
+      }
+      #grade {
+        background: skyblue;
+        background: radial-gradient(yellow, white, orange);
+      }
+      #gradf {
+        background: skyblue;
+        background: radial-gradient(yellow, white 10%, orange 60%);
+      }
+      #gradg {
+        background: red;
+        background: repeating-linear-gradient(yellow, red 20px);
+      }
+      #gradh {
+        background: red;
+        background: repeating-radial-gradient(circle, white, #ccc 10%);
+      }
+      #gradi {
+        background: red;
+        background: repeating-linear-gradient(
+          yellow,
+          yellow 20px,
+          red 20px,
+          red 40px
+        );
+      }
+      #gradj {
+        background: #ccc;
+        background: repeating-radial-gradient(
+          circle,
+          white,
+          white 10%,
+          #ccc 10%,
+          #ccc 20%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grad" id="grad1"></div>
+    <div class="grad" id="grad2"></div>
+    <div class="grad" id="grada"></div>
+    <div class="grad" id="gradb"></div>
+    <div class="grad" id="gradc"></div>
+    <div class="grad" id="gradd"></div>
+    <div class="grad" id="grade"></div>
+    <div class="grad" id="gradf"></div>
+    <div class="grad" id="gradg"></div>
+    <div class="grad" id="gradh"></div>
+    <div class="grad" id="gradi"></div>
+    <div class="grad" id="gradj"></div>
+  </body>
+</html>
