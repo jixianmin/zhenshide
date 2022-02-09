@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선생과 나의 코딩 방법이 다르다?선생이 올린 코드보기</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      ul li {
+        float: left;
+      }
+      a {
+        text-decoration: none;
+        background-color: #ccc;
+        color: black;
+        padding: 5px 10px;
+        box-shadow: 5px 5px 9px black;
+      }
+      /* a {
+        border-left: 1px solid black;
+      } */
+      .contents li:nth-child(1) a {
+        border-left: none;
+      }
+      ul li a:hover,
+      ul li a:focus {
+        background-color: black;
+        color: white;
+      }
+      ul li a:active {
+        background-color: red;
+        color: white;
+      }
+      li + li a {
+        border-left: 1px solid black;
+      }
+      /* #quiz ul li:not(:last-child 또는 #menu6){
+          border-right: 1px solid;
+      }*/
+    </style>
+  </head>
+  <body>
+    <ul class="contents">
+      <li><a href="#">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="#">메뉴3</a></li>
+      <li><a href="#">메뉴4</a></li>
+      <li><a href="#">메뉴5</a></li>
+      <li><a href="#">메뉴6</a></li>
+    </ul>
+  </body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>page325</title>
+    <title>0208</title>
     <style>
       body {
         background: gray;
@@ -31,7 +31,7 @@
         padding: 0;
         text-align: center;
       }
-      .last-fieldset input {
+      .last-fieldset button {
         border-radius: 20px;
         padding: 5px 20px;
       }
@@ -43,21 +43,28 @@
       .input-wrapper {
         margin-top: 20px;
       }
-      #signup input[type="text"],
-      #signup input[type="password"],
-      #signup input[type="tel"],
-      #signup input[type="email"] {
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        font-size: 13px;
-        padding: 5px;
-        width: 200px;
-      }
       #signup input[required] {
         border: 1px red solid;
       }
       #signup input[readonly] {
         border: none;
+      }
+      /* #signup input[type="text"],
+      #signup input[type="password"],
+      #signup input[type="tel"],
+      #signup input[type="email"] {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font: 13px;
+        padding: 5px;
+        width: 200px;
+      } */
+      #signup input:not([type="radio"]) {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font: 13px;
+        padding: 5px;
+        width: 200px;
       }
     </style>
   </head>
@@ -112,7 +119,7 @@
         </fieldset>
         <fieldset class="last-fieldset">
           <!-- input은 인라인 속성이라 margin auto가 안된다 그리고 제출 중앙으로보내는거 부모요소인 파일셋에만 올려야함 -->
-          <input type="submit" value="제출" id="circle" />
+          <button>제출</button>
         </fieldset>
       </form>
     </div>

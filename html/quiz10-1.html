@@ -6,32 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        ul{
-            list-style-type: none;
-            margin-left: 40px;
-        }
-        a[target="theater"] {
-        background-image: url(./theater.png);
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: contain;
-        width: 300px;
-        padding-left: 50px;
-        line-height: 40px;
+      div img:hover,
+      div img:focus {
+        border: 1px solid red;
       }
-      .navi ul li {
-        float: left;
-        width: 150px;
-        padding: 10px;
+      section {
+        display: inline-block;
+      }
+      section > img {
+        border: 1px solid red;
       }
     </style>
   </head>
   <body>
-    <ul>
-        <li><a href="#" target="theater"></a></li>
-        <li><a href="#" target="museum"></a></li>
-        <li><a href="#" target="market"></a></li>
-        <div class="clear" >
-    </ul>
+    <div>
+      <section><img src="./theater.png" alt="theater" /></section>
+      <img src="./museum.png" alt="museum" />
+      <img src="./market.png" alt="market.png" />
+    </div>
+    <!-- 이미지 크기 조절 책 302p 나랑 선생의 방법이 좀 다르다?사진은 아이콘구글링 -->
   </body>
 </html>

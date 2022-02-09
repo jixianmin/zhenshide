@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>혼자서 논거</title>
+    <style>
+      h1 {
+        width: 500px;
+        height: 80px;
+        background-color: #222;
+        color: #fff;
+        font-weight: bold;
+        line-height: 80px;
+        text-align: center;
+        transform: skewX(15deg);
+      }
+      .photo {
+        transform: translate(50px, 30px);
+      }
+      img {
+        border: 1px solid red;
+      }
+      #move:hover {
+        transform: translate(150px, 120px);
+      }
+      .photo2 {
+        transform: scaleX(2);
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        background: url(./theater.png) no-repeat left top;
+        border: 1px solid green;
+        padding: 10px;
+      }
+      #bg1 {
+        background-size: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS 변형 함수 익히기</h1>
+    <!-- transform속성과 변형함수 책 356페이지-->
+    <div class="photo" id="move">
+      <img src="./museum.png" alt="museum" />
+    </div>
+    <div class="photo2">
+      <img src="./market.png" alt="museum" />
+    </div>
+    <hr />
+    <div class="box" id="bg1"></div>
+  </body>
+</html>

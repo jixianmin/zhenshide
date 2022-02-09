@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      #signup {
+        width: 400px;
+        border: 2px solid;
+        border-radius: 4px;
+        padding: 20px;
+      }
+      #signup fieldset {
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      #signup fieldset legend {
+        font-weight: bold;
+      }
+      #signup label {
+        display: inline-block;
+        min-width: 60px;
+      }
+      #signup input:checked + label {
+        color: red;
+        font-weight: bold;
+      }
+      #signup ul li {
+        margin: 30px 0;
+      }
+      #signup input[type="submit"] {
+        border-radius: 20px;
+        padding: 5px 20px;
+        border: 1px solid;
+        display: block;
+        margin: 0 auto;
+      }
+      #signup input[type="text"],
+      input[type="tel"] {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 5px;
+        width: 200px;
+      }
+      #signup[type="tel"] {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 5px;
+        width: 200px;
+      }
+      .input-wrapper {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="signup">
+      <form>
+        <fieldset>
+          <legend>개인정보</legend>
+          <div>
+            <label class="input-label">이름</label>
+            <input type="text" />
+          </div>
+          <div class="input-wrapper">
+            <label class="input-label">연락처</label>
+            <input type="tel" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>객실형태</legend>
+          <ul>
+            <li>
+              <input type="radio" name="room" id="basic" /><label for="basic"
+                >기본형(최대 2인)</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="room" id="basic" /><label for="basic"
+                >가족형(최대 8인)</label
+              >
+            </li>
+          </ul>
+        </fieldset>
+        <input type="submit" value="제출해주세요" />
+        <!-- 패딩으로 해야지 수정할때 편하다 "제출" -->
+      </form>
+    </div>
+  </body>
+</html>
