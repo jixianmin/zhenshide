@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+          margin: 0px;
+      }
+      #page-wrapper {
+      }
+      .container {
+        display: flex;
+        justify-content: flex-start
+      }
+      .container2 {
+        display: flex;
+        justify-content: flex-end
+      }
+      .container3 {
+        display: flex;
+        justify-content: center
+      }
+      .container4 {
+        display: flex;
+        background-color: grey;
+        height: 150px;
+        margin: 0px;
+        flex-wrap: wrap-reverse;
+      }
+      /* div가 블록요소이라 바로 부모요소에 플렉스를 넣어라 */
+      .box {
+        background: white;
+        color: black;
+      }
+      #box1 {
+      }
+      #box2 {
+      }
+      #box3 {
+      }
+      #box4 {
+      }
+      #box5 {
+      }
+      header{
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header>
+        <div class="container">
+          <div class="box" id="box1">Google 정보</div>
+          <div class="box" id="box2">스토어</div>
+        </div>
+        <div class="container2">
+          <div class="box" id="box3">Gmail</div>
+          <div class="box" id="box4">이미지</div>
+          <div id="box5"><img src="/html/googleicone.png" />
+        </div>
+      </header>
+      <main>
+        <div class="container3">
+          <img src="/html/구글로고.png" />
+        </div>
+        <div class="container3">
+            <input type="text" size="30ph" />
+        </div>
+      </main>
+      <footer>
+          <div class="container4">
+
+          </div>
+      </footer>
+    </div>
+    <!-- 구글 헤더 푸터 만들기 justify-content 413: space-between 420;으로 좌우로 떨어뜨리기 -->
+  </body>
+</html>
