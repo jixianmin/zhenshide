@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const answer = prompt("숫자를 입력하세요.");
+      const score = +answer;
+
+      // if (number > 100) {
+      //   alert("아무 것도 아닙니다.");
+      // } else if (number > 90) {
+      //   alert("A학점 입니다.");
+      // } else if (number > 80) {
+      //   alert("B학점 입니다.");
+      // } else if (number > 70) {
+      //   alert("C학점 입니다.");
+      // } else if (number >= 0) {
+      //   alert("D학점 입니다.");
+      // }
+
+      // 선생 작성 코드
+      // if (score >= 90) {
+      //   alert("A학점 입니다");
+      // } else if (80 <= score) {
+      //   alert("B학점 입니다.");
+      // } else if (70 <= score) {
+      //   alert("C학점 입니다.");
+      // } else {
+      //   alert("F학점 입니다.");
+      // }
+
+      // 9 9 9 10
+      // 8 8 8
+      // 7 7 7
+
+      // 1.10으로 나눈다
+
+      let score2 = score / 10;
+      // 2.정수로 바꾼다
+      score2 = parseInt(score2);
+
+      console.log(score2);
+
+      switch (score2) {
+        case 10:
+        case 9:
+          alert("A학점 입니다");
+          break;
+        case 8:
+          alert("B학점 입니다");
+          break;
+        case 7:
+          alert("C학점 입니다");
+          break;
+        default:
+          alert("F학점 입니다");
+      }
+      // 100점은 따로 기재해줘야한다
+    </script>
+  </body>
+</html>
