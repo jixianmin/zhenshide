@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,0 initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>3의 배수 찾기</h1>
+    <script>
+      var userNumber = prompt("몇 까지의 3의 배수를 찾을까요?");
+
+      let count = 0;
+
+      if (userNumber !== null) {
+        for (let i = 1; i <= userNumber; i++) {
+          if (i % 3 === 0) {
+            document.write(i + ",");
+            count += 1;
+          }
+        }
+        document.write(
+          "<br><p>" + userNumber + "까지 3의 배수의 개수: " + count + "</p>"
+        );
+      }
+    </script>
+  </body>
+</html>

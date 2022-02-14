@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for와 Document 493페이지 응용</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      document.write("<br>");
+      // i가 열 j가 행 첫번째 for(초기값;조건;증가식){실행할 명령}//
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      document.write("<br>");
+      // 두번째 //
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 5; j >= 1; j--) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      document.write("<br>");
+      // j에 i의 변수를 포함시키지않아 같은 결과를 얻게됨 첫번째랑 같음 //
+      for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      document.write("<br>");
+      // 세번째 -- 475페이지 !==, 479페이지 //
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>533페이지</title>
+  </head>
+  <body>
+    <script>
+      function calcSum(n) {
+        var sum = 0;
+
+        for (let i = 1; i < n + 1; i++) {
+          sum += i;
+        }
+        document.write("1부터" + n + "까지 더하면 " + sum);
+      }
+
+      var userNumber = prompt("얼마까지 더할까요?");
+      if (userNumber !== null) {
+        calcSum(parseInt(userNumber));
+      }
+    </script>
+  </body>
+</html>

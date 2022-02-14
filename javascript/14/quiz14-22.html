@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wile문으로 498페이지</title>
+    <style>
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>while 문을 사용한 3의 배수 찾기</h1>
+    <script>
+      var userNumber = prompt("몇 까지의 3의 배수를 찾을까요?");
+      let count = 0;
+
+      if (userNumber !== null) {
+        let i = 1;
+        while (i <= userNumber) {
+          if (i % 3 === 0) {
+            document.write(i + ",");
+            //count += 1;//
+            count++;
+          }
+
+          i++;
+        }
+
+        document.write(
+          "<br><p>" + userNumber + "까지 3의 배수의 개수: " + count + "</p>"
+        );
+      }
+    </script>
+  </body>
+</html>
