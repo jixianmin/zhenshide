@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자판기</title>
+    <style></style>
+  </head>
+  <body>
+    <button onclick="insertCoin(100)">100원</button>
+    <button onclick="insertCoin(500)">500원</button>
+    <button onclick="insertCoin(1000)">1000원</button>
+    <button onclick="insertCoin(5000)">5000원</button>
+    <br />
+    <button onclick="buy(1000)">콜라 500ml</button>
+    <button onclick="buy(2000)">17차 500ml</button>
+
+    <script>
+      //1.버튼리스트 만들기
+      //2.버튼을 누르면 insertCoin함수를 실행
+      //3.버튼마다 증가하는 돈이 다름 insertCoin(안의 100,500,1000,5000)
+      //4.insertCoin 함수:매개변수만큼 totalMoney를 증가시키고   => 537
+      //5.totalMoney를 console.log
+
+      let totalMoney = 0;
+
+      const insertCoin = (money) => {
+        totalMoney += money;
+        console.log(totalMoney);
+      };
+      //가격이 소지 금액보다 크면 alert&구매 불가
+      //4.money만큼 totalMoney를 감소시키고
+      //5.totalMoney를 console.log;
+      const buy = (money) => {
+        if (money > 0) {
+          totalMoney -= money;
+          console.log(totalMoney);
+        } else {
+          alert("돈이 부족합니다.");
+        }
+      };
+    </script>
+  </body>
+</html>

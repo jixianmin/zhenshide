@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>책543페이지</title>
+    <style>
+      #container {
+        display: flex;
+        border: 1px solid gray;
+        justify-content: center;
+        height: 500px;
+      }
+      ul {
+        align-items: flex-start;
+        list-style: none;
+        display: flex;
+      }
+      li {
+        margin: 5px;
+        border: 1px solid gray;
+        padding: 10px 30px;
+      }
+      #result {
+        border: 1px solid black;
+        align-self: center;
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 600px;
+        height: 320px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul>
+        <li>
+          <a href="#" onclick="changeBg('green')">Green</a>
+        </li>
+        <li>
+          <a href="#" onclick="changeBg('orange')">Orange</a>
+        </li>
+        <li>
+          <a href="#" onclick="changeBg('purple')">Purple</a>
+        </li>
+      </ul>
+      <div id="result"></div>
+    </div>
+    <script>
+      function changeBg(color) {
+        let result = document.querySelector("#result");
+        result.style.backgroundColor = color;
+      }
+    </script>
+  </body>
+</html>

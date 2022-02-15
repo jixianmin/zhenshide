@@ -25,6 +25,35 @@
       addNumber();
       addNumber();
       addNumber();
+      //함수선언식은 끌어서도 사용가능하다
+      minusNumber(3, 4);
+
+      //함수 표현식 선생은 이거 계속 사용할거임 이게 더 직관적임 아래것들은 같은것이나 줄여서 표현하는 방식 화살표 함수에 익숙해지자 535쪽
+      const minusNumber = function (a, b) {
+        alert(a, b);
+      };
+      const minusNumber = (a, b) => {
+        alert(a, b);
+      };
+      const minusNumber = (a, b) => alert(a, b);
+      const hi = () => {
+        return "hi";
+      };
+      const hi = () => "hi";
+      () => {};
+      addNumber(3, 5);
+      //아래 리액트할때 파악이 될거다
+      const hello = (func) => {
+        func("hi");
+      };
+      hello((message) => alert(message));
+      ((message) => {
+        alert(message);
+      })("hi");
+      //함수 선언식
+      function minusNumber(a, b) {
+        alert(a, b);
+      }
     </script>
   </body>
 </html>
