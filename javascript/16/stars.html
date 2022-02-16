@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const a = 5;
+      const b = 3;
+      let program = (a = 5, b = 3) => {
+        let stars = "";
+        //1.star에 "*"을 a번 더한다 stars = stars + "*"; 할당 연산자 x += y ---- x = x + y
+        for (let i = 1; i <= a; i++) {
+          stars = stars + "*";
+        }
+        //2.console에 stars를 b번 출력한다 console.log(stars)
+        for (let j = 1; j <= b; j++) {
+          console.log(stars);
+        }
+      };
+    </script>
+  </body>
+</html>

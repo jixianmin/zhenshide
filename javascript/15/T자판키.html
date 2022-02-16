@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>수업중 자판기 답안</title>
+    <style>
+      .container {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+      .allcontainer {
+        display: flex;
+        flex-direction: row;
+      }
+      .coin {
+        margin: 0px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="allcontainer">
+      <div class="container">
+        <img class="coin" src="/html/market.png" />
+
+        <button class="coin" onclick="insertCoin(100)">100원</button>
+      </div>
+      <div class="container">
+        <img class="coin" src="/html/market.png" />
+
+        <button class="coin" onclick="insertCoin(500)">500원</button>
+      </div>
+      <div class="container">
+        <img class="coin" src="/html/museum.png" />
+
+        <button class="coin" onclick="insertCoin(1000)">1000원</button>
+      </div>
+      <div class="container">
+        <img class="coin" src="/html/museum.png" />
+
+        <button class="coin" onclick="insertCoin(5000)">5000원</button>
+      </div>
+    </div>
+    <br />
+    <p>현재금액:<span id="total-money">0</span>원</p>
+    <p>메세지 : <span id="message"></span></p>
+    <button onclick="buy(1000)">콜라 500ml</button>
+    <button onclick="buy(2000)">17차 500ml</button>
+    <br />
+    <button onclick="returnchange()">거스름돈 반환(소지금액 0원)</button>
+    <script>
+      //1.버튼리스트 만들기
+      //2.버튼을 누르면 insertCoin함수를 실행
+      //const insertCoin = () => {} 여러개로도 작성 가능
+      //const insertCoin = () => {}
+      //const insertCoin = () => {}
+      //3.버튼마다 증가하는 돈이 다름 insertCoin(안의 100,500,1000,5000)
+      //4.insertCoin 함수:매개변수만큼 totalMoney를 증가시키고   => 537
+      //5.totalMoney를 console.log
+
+      let totalMoney = 0;
+
+      const insertCoin = (money) => {
+        totalMoney += money; //totalMoney = totalMoney + money a = a + 3 or a += 3
+        printTotalMoney();
+        printMessage(`(${money}원 돈을 넣었습니다)`);
+        //const message = `${money}원을 넣으셨습니다.`로 하면 더 명확하다
+      };
+      //가격이 소지 금액보다 크면 alert&구매 불가 prinTotalMoney();document.querySelector("#message"${money}원을 넣으셨습니다.)
+      //cost buy = (money) => { if(money > totalMoney){alert("구매불가")}else{totalMoeny -= money ;}console.log(totalMoney);
+      //4.money만큼 totalMoney를 감소시키고
+      //5.totalMoney를 console.log;
+      const buy = (money) => {
+        if (totalMoney > money) {
+          totalMoney -= money;
+          printTotalMoney();
+          printMessage(`음료를 구매하였습니다.(${money}원)`);
+        } else {
+          alert("돈이 부족합니다.");
+        }
+      };
+
+      //document.querySelector("#total-money").innerHTML=""
+      const returnchange = () => {
+        totalMoney = 0;
+        printTotalMoney();
+        printMessage(`잔돈을 반환하였습니다1.`);
+        // document.querySelector(
+        //   "#message"
+        // ).innerHTML = `잔돈을 반환하였습니다2.`; 이거 쓰니까 2가 나오게 된다
+      };
+
+      const printTotalMoney = () => {
+        document.querySelector("#total-money").innerHTML = totalMoney;
+      };
+      //total 과 total- 의차이
+      const printMessage = (message) => {
+        document.querySelector("#message").innerHTML = message;
+      };
+    </script>
+  </body>
+</html>

@@ -13,9 +13,11 @@
     <button onclick="insertCoin(1000)">1000원</button>
     <button onclick="insertCoin(5000)">5000원</button>
     <br />
+    <p>현재금액:<span id="total-money">0</span>원</p>
     <button onclick="buy(1000)">콜라 500ml</button>
     <button onclick="buy(2000)">17차 500ml</button>
-
+    <br />
+    <button inclick="reset(money)">거스름돈 반환(소지금액 0원)</button>
     <script>
       //1.버튼리스트 만들기
       //2.버튼을 누르면 insertCoin함수를 실행
@@ -33,12 +35,16 @@
       //4.money만큼 totalMoney를 감소시키고
       //5.totalMoney를 console.log;
       const buy = (money) => {
-        if (money > 0) {
+        if (totalMoney > money) {
           totalMoney -= money;
           console.log(totalMoney);
         } else {
           alert("돈이 부족합니다.");
         }
+      };
+      //document.querySelector("#total-money").innerHTML=""
+      const reset = (money) => {
+        money = money - money;
       };
     </script>
   </body>
