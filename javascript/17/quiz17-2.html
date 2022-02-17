@@ -35,12 +35,13 @@
         for (let i = 0; i < row.value; i++) {
           const tr = document.createElement("tr");
           const table = document.querySelector("#table");
+          table.appendChild(tr);
           for (let j = 0; j < column.value; j++) {
             const td = document.createElement("td");
             td.innerText = i + "," + j;
             tr.appendChild(td);
           }
-          table.appendChild(tr); /*tr을 뒤에 넣어서 안에 tr를 넣음*/
+          /*tr을 뒤에 넣어서 안에 tr를 넣음*/
         }
       });
 
