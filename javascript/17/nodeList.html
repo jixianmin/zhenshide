@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>web Programming</h1>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Javascript</li>
+    </ul>
+    <button onclick="addP()">더보기</button>
+    <div id="info"></div>
+
+    <button onclick="addImg()">더보기</button>
+    <button onclick="removeImg()">삭제</button>
+    <script>
+      const addP = () => {
+        // const newP = document.createElement("p");
+        // const txtNode = document.createTextNode(
+        //   "Dom은 document object model의 줄임말입니다."
+        // );
+        // newP.appendChild(txtNode);
+        newP.innerText = "Dom은 document object model의 줄임말입니다.";
+        document.getElementById("info").appendChild(newP);
+      };
+      const addImg = () => {
+        const newImg = document.createElement("img");
+        newImg.src =
+          "https://images.mypetlife.co.kr/content/uploads/2019/12/09151959/%EC%8B%AC%EC%8B%AC%ED%95%9C_%EA%B3%A0%EC%96%91%EC%9D%B42.png";
+        document.getElementById("info").appendChild(newImg);
+      };
+      const removeImg = () => {
+        document.removeChild();
+      };
+    </script>
+  </body>
+</html>

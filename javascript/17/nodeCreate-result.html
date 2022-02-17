@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Programming 633page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      #container {
+        width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+      input[type="text"] {
+        width: 370px;
+        float: left;
+        height: 30px;
+        padding-left: 30px;
+      }
+      button {
+        width: 90px;
+        height: 30px;
+        float: right;
+        background: #222;
+        color: #fff;
+        border: none;
+      }
+      hr {
+        clear: both;
+        display: none;
+      }
+      ul {
+        list-style: none;
+        padding-top: 50px;
+      }
+      li {
+        line-height: 2.5;
+      }
+      li:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Web Programming</h1>
+      <p>공부할 주제를 기록해 보세요</p>
+      <form action="">
+        <input type="text" id="subject" autofocus />
+        <button onclick="newRegister(); return false;">추가</button>
+      </form>
+      <hr />
+      <ul id="itemList"></ul>
+    </div>
+    <script>
+      function newRegister() {
+        var newItem = document.createElement("li");
+        var subject = document.querySelector("#subject");
+        var newText = document.createTextNode(subject.value);
+        newItem.appendChild(newText);
+
+        var itemList = document.querySelector("#itemList");
+        itemList.appendChild(newItem);
+
+        subject.value = "";
+
+        var items = document.querySelectorAll("li");
+        for (i = 0; i < items.length; i++) {
+          items[i].addEventListener("click", function () {
+            if (this.parentNode) this.parentNode.removeChild(this);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

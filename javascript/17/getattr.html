@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>611페이지</title>
+    <style>
+      .img-thumbnail {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="prod-pic">
+      <img
+        src="https://t1.daumcdn.net/tistoryfile/fs12/20_tistory_2009_05_07_17_49_4a02a09d3a56b?original"
+        alt="에디오피아 게뎁"
+        id="cup"
+        width="200"
+        height="200"
+        onclick="displaySrc()"
+      />
+    </div>
+    <div class="thumbnail-list">
+      <img
+        class="img-thumbnail"
+        src="https://news.nateimg.co.kr/orgImg/sg/2021/05/04/20210504513983.jpg"
+      />
+      <img
+        class="img-thumbnail"
+        src="http://res.heraldm.com/phpwas/restmb_idxmake.php?idx=307&simg=/content/image/2021/11/04/20211104000083_0.jpg"
+      />
+      <img
+        class="img-thumbnail"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm9TZBza_lvP709nfv4Vib9EeYuPB9Bl0IFA&usqp=CAU"
+      />
+    </div>
+    <script>
+      const cup = document.querySelector("#cup");
+
+      const thumbnailList = document.querySelectorAll(".img-thumbnail");
+      for (let i = 0; i < thumbnailList.length; i++) {
+        thumbnailList[i].onclick = changePic;
+      }
+
+      function displaySrc() {
+        //const cup = document.querySelector("#cup");맨위에서 선언 지움
+        alert("이미지 소스: " + cup.getAttribute("src"));
+      }
+      function changePic() {
+        const newPic = this.src;
+        //const cup = document.querySelector("#cup");
+        cup.setAttribute("src", newPic);
+      }
+
+      //   cup.onclick = function () {
+      //     alert("이미지를 클릭했습니다.");
+      //   };
+      event = {
+        //작성 다못함//
+        event: "click",
+      };
+      //아래 줄이고 늘리고 알고싶으면 비구조화 할당을 공부해라
+      cup.onclick = function (event) {
+        const type = event.type; //이거를 작성하고 아래 이벤트 버려//
+        console.log(`이벤트 유형: ${/*event.*/ type}`);
+        console.log(`이벤트 발생 위치: ${event.pageX},${event.pageY}`);
+        console.log(event);
+      };
+    </script>
+  </body>
+</html>

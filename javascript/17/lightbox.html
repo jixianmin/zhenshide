@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      #lightbox {
+        background: rgba(0, 0, 0, 0.7);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #lightboxImage {
+        border: 5px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      img {
+        width: 300px;
+        height: 200px;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 1000px;
+      }
+      li {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <ul>
+        <li>
+          <img
+            src="https://p4.wallpaperbetter.com/wallpaper/817/916/889/falcon-9-rocket-4k-high-definition-wallpaper-preview.jpg"
+            data-src="https://p4.wallpaperbetter.com/wallpaper/817/916/889/falcon-9-rocket-4k-high-definition-wallpaper-preview.jpg"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://t1.daumcdn.net/cfile/tistory/27428C4451E8D7551A"
+            data-src="https://t1.daumcdn.net/cfile/tistory/27428C4451E8D7551A"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://t1.daumcdn.net/cfile/blog/2011D2424E291B4E1D"
+            data-src="https://t1.daumcdn.net/cfile/blog/2011D2424E291B4E1D"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://p4.wallpaperbetter.com/wallpaper/817/916/889/falcon-9-rocket-4k-high-definition-wallpaper-preview.jpg"
+            data-src="https://p4.wallpaperbetter.com/wallpaper/817/916/889/falcon-9-rocket-4k-high-definition-wallpaper-preview.jpg"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://t1.daumcdn.net/cfile/tistory/27428C4451E8D7551A"
+            data-src="https://t1.daumcdn.net/cfile/tistory/27428C4451E8D7551A"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://t1.daumcdn.net/cfile/blog/2011D2424E291B4E1D"
+            data-src="https://t1.daumcdn.net/cfile/blog/2011D2424E291B4E1D"
+            class="pic"
+          />
+        </li>
+      </ul>
+    </div>
+    <div id="lightbox">
+      <img
+        src="https://p4.wallpaperbetter.com/wallpaper/817/916/889/falcon-9-rocket-4k-high-definition-wallpaper-preview.jpg"
+        alt=""
+        id="lightboxImage"
+      />
+    </div>
+    <script>
+      var pics = document.getElementsByClassName("pic");
+      var lightbox = document.getElementById("lightbox");
+      var lightboxImage = document.getElementById("lightboxImage");
+      for (i = 0; i < pics.length; i++) {
+        pics[i].addEventListener("click", showLightbox);
+      }
+      function showLightbox() {
+        var bigLocation = this.getAttribute("data-src");
+        lightboxImage.setAttribute("src", bigLocation);
+        lightbox.style.display = "block";
+      }
+      lightbox.onclick = function () {
+        lightbox.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

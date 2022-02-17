@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>642페이지</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        font-size: 20px;
+        line-height: 35px;
+      }
+      .check {
+        color: #ccc;
+        font-size: 20px;
+        margin-right: 25px;
+      }
+      .check:hover {
+        color: #222;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>할 일 목록</h1>
+    <ul>
+      <li><span class="check">&check;</span>할 일 1</li>
+      <li><span class="check">&check;</span>할 일 2</li>
+      <li><span class="check">&check;</span>할 일 3</li>
+      <li><span class="check">&check;</span>할 일 4</li>
+      <li><span class="check">&check;</span>할 일 5</li>
+    </ul>
+    <script>
+      const checks = document.querySelectorAll(".check");
+      for (let i = 0; i < checks.length; i++) {
+        checks[i].addEventListener("click", function () {
+          //[]배열 this는 선언?=const? 실행 주체 함수를 실행한 개체?여기선 이벤트가 달린 엘리먼트라고 이해
+          this.style.color = "#ccc";
+          this.parentNode.style.color = "#ccc";
+          this.parentNode.style.textDecoration = "line-through";
+        });
+      }
+
+      /*
+      const checklist = document.querySelectorAll(".check");
+      for(let i = 0; i < checklist.length; i++){
+        checkList[i].addEventListener("click",(e) => {
+            console.log("target",e.target);
+            console.log("currentTarget",e.currentTarget);
+            e.currentTarget.style.color = "#ccc";
+            e.currentTarget.style.textDecoration = "line-through";
+        });
+      }
+            */
+      /*
+        <span class="img-check"를 추가함>        
+            
+            */
+    </script>
+  </body>
+</html>

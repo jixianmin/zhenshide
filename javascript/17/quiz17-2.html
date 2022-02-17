@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>643페이지</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid #ccc;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="row" />
+    <input type="text" class="column" />
+    <button class="check" type="submit">작성</button>
+    <table id="table"></table>
+    <script>
+      const check = document.querySelector(".check");
+      const row = document.querySelector(".row");
+      const column = document.querySelector(".column");
+
+      check.addEventListener("click", function () {
+        console.log(row.value, column.value);
+        for (let i = 0; i < row.value; i++) {
+          const tr = document.createElement("tr");
+          const table = document.querySelector("#table");
+          for (let j = 0; j < column.value; j++) {
+            const td = document.createElement("td");
+            td.innerText = i + "," + j;
+            tr.appendChild(td);
+          }
+          table.appendChild(tr); /*tr을 뒤에 넣어서 안에 tr를 넣음*/
+        }
+      });
+
+      /*
+              1.작성버튼 누르면:EventListener
+              2.첫번째 인풋 value(row),두번째 인풋 value(column) 추출:
+                          querySelector or getElementByld
+              3.table 태그 안에 row개만큼 <tr>생성:
+                              for문
+              4.3번의 <tr>안에 column개 만큼 <td>생성:
+                              중첩for문
+              5.td태그 안에 현재 row,column값 출력:
+                              innerText
+              step1:버튼누르면 input 두개에 있는 값 console에 찍어보기
+              step2:tr태그를 만들어서 table태그에 붙이기를 row번 수행
+
+              [[[[[[tr은 행row td 열 column 88페이지]]]]]]]]
+              tr을 td에붙히고 그다음에 tr을 붙여라
+        */
+    </script>
+  </body>
+</html>
