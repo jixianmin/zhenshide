@@ -1,0 +1,197 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: #333;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  margin: 0;
+  padding: 0; /*ul h p 테그들은 원래 마진이있다 없애줘라*/
+}
+header {
+  background-color: #333;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#nodelogo {
+  width: 122px;
+  height: 74.72px;
+  margin: 10px 0px 0px;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-content: center;
+}
+header li {
+  padding: 0px 2px 0px;
+}
+#home {
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc !important;
+  width: 30px;
+  height: 18px;
+  border-right: solid #ccc 1px;
+}
+#ABOUT {
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc !important;
+  width: 57.69px;
+  height: 18px;
+  border-right: solid #ccc 1px;
+}
+#download {
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc !important;
+  width: 72px;
+  height: 18px;
+  border-right: solid #ccc 1px;
+}
+#document {
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc !important;
+  width: 44px;
+  height: 18px;
+  border-right: solid #ccc 1px;
+}
+#participation {
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc !important;
+  width: 72px;
+  height: 18px;
+  border-right: solid #ccc 1px;
+}
+#security {
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc !important;
+  width: 44px;
+  height: 18px;
+  border-right: solid #ccc 1px;
+}
+#news {
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc !important;
+  width: 44px;
+  height: 18px;
+  border-right: solid #ccc 1px;
+}
+#certification {
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc !important;
+  width: 105.31px;
+  width: 18px;
+}
+#set {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#moon {
+  width: 24px;
+  height: 24px;
+  padding: 12px;
+}
+#language {
+  width: 25px;
+  height: 25px;
+  padding: 12px;
+}
+/*메인 시작*/
+main {
+  flex: 1;
+}
+#main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+#downloadcontainer {
+  display: flex;
+}
+#downloadblock-left {
+  display: flex;
+  flex-direction: column;
+}
+#download-left {
+  text-align: center;
+  background: #026e00;
+  margin: 10px 4px;
+  padding: 6px 18px;
+  color: #ffffff;
+}
+main ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  font-size: 12px;
+}
+main ul li {
+  padding: 2px;
+}
+main ul li + li {
+  border-left: grey 1px solid;
+} /*뒤에 두개만 적용*/
+#downloadblock-right {
+  display: flex;
+  flex-direction: column;
+}
+#download-right {
+  text-align: center;
+  background: #026e00;
+  margin: 10px 4px;
+  padding: 6px 18px;
+  color: #ffffff;
+}
+/* 푸터 시작 */
+footer {
+  background-color: #333;
+}
+#footer-container {
+  flex-shrink: 0;
+  display: flex;
+  max-width: 980px;
+  margin: 0 auto;
+}
+#footer-left {
+  padding: 1em 20px;
+  width: 60%;
+}
+#footer-container img {
+  width: 120px;
+  height: 37.72;
+}
+footer p,
+footer ul {
+  color: white;
+  font-size: 12px;
+}
+footer ul {
+  padding: 0px 0px 0px 40px;
+  margin: 14px 0px;
+}
