@@ -16,13 +16,70 @@
 </head>
 <body>
   <plate> 가나다라마바사 </plate>
-  <a title="some title">abcdefg</a>
+  <a title="some title">abcdefg</a>||||
+  <select>
+
+    <optgroup label="HTML5">
+    
+    <option>Mutimedia Tag</option>
+    
+    <option>Connectivity</option>
+    
+    <option>Device Access</option>
+    
+    </optgroup>
+    
+    <optgroup label="CSS3">
+    
+    <option>Animation</option>
+    
+    <option>3D Transform</option>
+    
+    </optgroup>
+    
+    </select>
+    
+    <hr>
+   
 <script>
   // const numberList = [Math.floor(Math.random() * 45) + 1];
   //  console.log(numberList);
   const getRandomNumber = () => Math.floor(Math.random() * 45) + 1;
   const numberList = [];
   let randomNumber = getRandomNumber();
+  var str = 'string';
+// 문자열은 유사배열이다.
+for (var i = 0; i < str.length; i++) {
+  console.log(str[i]);
+}
+// 문자열을 변경할 수 없다.
+str[0] = 'S';
+console.log(str); // string
+    
+str = 'string';
+console.log(str); // string
+
+str = 'String';
+console.log(str); // String
+
+str += ' test';
+console.log(str); // String test
+
+str = str.substring(0, 3);
+console.log(str); // Str
+
+str = str.toUpperCase();
+console.log(str); // STR
+var element = document.querySelector('.myElem');
+// HTML 문서에 myElem 클래스를 갖는 요소가 없다면 null을 반환한다.
+console.log(element); // null
+var foo = null;
+console.log(typeof foo); // object
+var foo = null;
+console.log(typeof foo === null); // false
+console.log(foo === null);        // true
+//따라서 null 타입을 확인할 때 typeof 연산자를 사용하면 안되고 일치 연산자(===)를 사용하여야 한다.
+
 </script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log(foo); // ① undefined
+var foo = 123;
+console.log(foo); // ② 123
+{
+  var foo = 456;
+}
+console.log(foo); // ③ 
+
+const course = "Bootcamp Prep";
+
+alert(`Hi I am getting ready for ${course} 🎉`);
+const seven = 7;
+const trueOrFalse = !!"";
+
+const result = (seven && trueOrFalse);
+
+if (result === !!"7") {
+  alert("🎉");
+}
+  </script>
+</body>
+</html>
