@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02/21오전</title>
+  </head>
+  <body>
+    <button id="bt">발사</button>
+    <p id="message"></p>
+    <script>
+      //   setInterval(() => console.log("안녕하세요."), 1000);
+      //   let a = 0;
+      //   const intevalId = setInterval(() => {
+      //     a += 1;
+      //     console.log(a);
+      //   }, 1000);
+
+      //   setTimeout(() => {
+      //     clearInterval(intervalId);
+      //     console.log("5초 뒤");
+      //   }, 5000);
+      //1.발사 버튼을 누르면 화면에 5,4,3,2,1이 찍히고
+      //2.5초뒤에 "발사 성공" alert로 띄우기
+      var bt = document.querySelector("#bt");
+      bt.addEventListener("click", btf);
+      let i = 5;
+      console.log(i);
+      function btf() {
+        /*const printTimer = () => {
+          document.querySelector("message").innerText = i;
+        };*/
+        document.querySelector("#message").innerText = i;
+        const intervalId = setInterval(() => {
+          i -= 1;
+          console.log(i);
+          document.querySelector("#message").innerText = i;
+        }, 1000);
+        setTimeout(() => {
+          clearInterval(intervalId);
+          alert("발사 성공");
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>

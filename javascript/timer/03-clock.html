@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="time"></p>
+    <script>
+      //const time = new Date();
+      //const hour = time.getHours();
+      //const minute = time.getMinutes();
+      //const second = time.getSeconds();
+
+      const $time = document.querySelector("#time");
+      //$time.innerText = `${hour}:${minute}:${second}`;
+      $time = setInterval(() => {
+        let time = new Date();
+        let hour = time.getHours();
+        let minute = time.getMinutes();
+        let second = time.getSeconds();
+        if (second < 10) {
+          second = "0" + second; //뭐는 = 뭐다 꼭 기억하자 477 연산자 할당
+        }
+        if (minute < 10) {
+          minute = "0" + minute;
+        }
+        if (hour < 10) {
+          hour = "0" + hour; //`0${hour}`;템프럴리터럴
+        }
+        $time.innerText = `${hour}:${minute}:${second}`;
+      }, 1000);
+      //1.1초마다 최신시간 찍기
+      //2.시간이 1자리 수면 앞에 0 추가하기
+      //    -ex)10:9:2 => 10:09:02
+    </script>
+  </body>
+</html>

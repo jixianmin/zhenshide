@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("fizzbuzz");
+        } else if (i % 3 === 0) {
+          console.log("fizz");
+        } else if (i % 5 === 0) {
+          console.log("buzz");
+        } else {
+          console.log(i);
+        }
+      }      내가 만든 쉬운 예제 아래는 선생님 작성
+      */
+      for (let i = 1; i <= 100; i++) {
+        let str = ""; //""문자열이라서 추가?
+        if (i % 3 === 0) str += "fizz";
+        if (i % 5 === 0) str += "buzz";
+
+        console.log(str ? str : i);
+      }
+      //""에 대해 499페이지 //바닐라자바스크립트=비주얼 스튜디오?
+      //조건연산자 조건 체크 483페이지
+      //바닐라코딩 자바스크립트파트1 Exercise
+    </script>
+  </body>
+</html>

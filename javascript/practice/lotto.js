@@ -18,8 +18,8 @@
 /*const getRandomNumber = () => { 아래와 이것은 동일하다
   return Math.floor(Math.random() * 45) + 1;
 };*/
+const getRandomNumber = () => Math.floor(Math.random() * 45) + 1;
 const recommend = () => {
-  const getRandomNumber = () => Math.floor(Math.random() * 45) + 1;
   const numberList = [];
   for (let i = 0; i < 6; i++) {
     let randomNumber = getRandomNumber();
@@ -71,7 +71,50 @@ const recommend = () => {
 //     $lottoNumberList[i].classList.add("green");
 //   }
 //버튼 누를때마다 번호 추천해주기
-document.querySelector("#btn-start").addEventListener("click", recommend);
 
 //recommend();
 //init()
+
+/*2022/02/21 미션
+  1.랜덤 숫자 만들어서
+  2.6개의 공에 숫자 출력,색깔 클래스 추가
+  3.01.초마다 */
+const printRandonNumber = () => {
+  setInterval(() => {
+    const number = getRandomNumber();
+    const $lottoNumberList = document.querySelectorAll(".lotto-number");
+
+    for (let i = 0; i < $lottoNumberList.length; i++) {
+      const number = getRandomNumber();
+      $lottoNumberList[i].innerText = number;
+      // numberList[i] 값에 따라서 class 붙이기
+      let colorClass = "";
+      if (number <= 10) {
+        colorClass = "yellow";
+      } else if (number <= 20) {
+        colorClass = "blue";
+      } else if (number <= 30) {
+        colorClass = "red";
+      } else if (number <= 40) {
+        colorClass = "gray";
+      } else {
+        colorClass = "green";
+      }
+      $lottoNumberList[i].classList = "lotto-number";
+      $lottoNumberList[i].classList.add(colorClass); //마지막 이거 추가
+    }
+  }, 100);
+};
+document
+  .querySelector("#btn-start")
+  .addEventListener("click", printRandonNumber);
+
+const recommend2 = () => {
+  const $lottoNumberList = document.querySelectorAll(".lotto-number");
+
+  for (let i = 0; i < $lottoNumberList.length; i++) {
+    const intervalId = setInterval(() => {
+      const number = getRandomNumber();
+    });
+  }
+};

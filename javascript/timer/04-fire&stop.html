@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn-fire">발사</button>
+    <button id="btn-stop" disabled>멈춰</button>
+    <p id="message"></p>
+    <script>
+      /*1.발사버튼을 누르면 5초 타이머 표시 & 5초뒤 alert
+          2.멈춰 버튼을 누르면 타이머 초기화*/
+      const $message = document.querySelector("#message");
+      const $btnFire = document.querySelector("#btn-fire");
+      const $btnStop = document.querySelector("#btn-stop");
+
+      let intervalId = "";
+      let tiameoutId = "";
+
+      $btnFire.addEventListener("click", () => {
+        $btnFire.disabled = "disabled"; //디스에이블을 넣어주고
+        $btnStop.disabled = ""; //풀어준다
+
+        let i = 5;
+        $message.innerText = i;
+
+        intervalId = setInterval(() => {
+          $message.innerText = --i;
+        }, 1000);
+
+        timeoutId = setTimeout(() => {
+          clearInterval(intervalId);
+          alert("발사 성공");
+          $btnFire.disabled = ""; //여러번 눌러도 상관없음
+          $btnStop.disabled = "";
+        }, 5000);
+      });
+      $btnStop.addEventListener("click", () => {
+        //btnFire눌렀을 때 생성된 interval,tiameout 종료
+        clearInterval(intervalId);
+        clearTimeout(timeoutId);
+        $btnFire.disabled = "";
+        $btnStop.disabled = "";
+      });
+      //선생 코드와 다르게 작성 서로 비교해보자
+      /*const disableButtons = (isFire) => {
+          if (isFire) {
+              $btnFire.disabled = "disabled";
+              $btnStop.disabled = "";
+          } else {
+              $btnFire.disabled = "";
+              $btnStop.disabled = "disabled";
+          }
+          $btnFire.disabled = isFire ? "disabled" : "";484페이지 조건 연산자 사용
+          $btnStop.disabled = isFire ? "" : "disabled";
+        }
+        */
+    </script>
+  </body>
+</html>
