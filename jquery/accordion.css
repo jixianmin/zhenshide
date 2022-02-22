@@ -1,0 +1,51 @@
+ul {
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin: auto;
+  padding: 0px;
+  max-width: 1000px;
+}
+.accordion {
+}
+.accordion-header {
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  color: #212529;
+  cursor: pointer;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  position: relative;
+}
+.accordion-body {
+  padding: 5px;
+  display: none;
+}
+.btn-close {
+  top: 15px;
+  right: 10px;
+  position: absolute;
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-size: 1.25rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transition: 0.2s ease-in;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.accordion-body.active {
+  display: block;
+}
+.accordion-header.active {
+  color: #0c63e4;
+  background: #e7f1ff;
+}
+.btn-close.active {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./button.css" />
+    <link rel="stylesheet" href="./dropdown.css" />
+  </head>
+  <body>
+    <div class="dropdown">
+      <button class="btn-dropdown btn-blue">open</button>
+      <ul class="dropdown-list">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn-dropdown btn-geen">open</button>
+      <ul class="dropdown-list">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn-dropdown btn-gray">open</button>
+      <ul class="dropdown-list">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /* <div class="dropdown">
+      <button class="btn-dropdown btn-blue">오픈</button>
+      <ul class="dropdown-list">
+        <li>아이템 1</li>
+        <li>아이템 2</li>
+        <li>아이템 3</li>
+      </ul>
+    </div>
+     document.querySelector(".btn-dropdown").onclick = function () {
+        if (document.querySelector(".dropdown-list").style.display === "none") {
+          document.querySelector(".dropdown-list").style.display = "block";
+        } else {
+          document.querySelector(".dropdown-list").style.display = "none";
+        }
+      }; */
+      //위에가 내가한 바닐라 자바스크립트 아래는 제이쿼리(제이쿼리 사용량이 꾸준이 줄어드는중이지만 아직도 많이 사용된다.)
+
+      $(".dropdown").click((e) => {
+        $(e.currentTarget).toggleClass("active");
+      });
+    </script>
+  </body>
+</html>

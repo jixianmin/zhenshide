@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function repeatVaco(n) {
+        let answer = "";
+        for (let i = 0; i < n; i++) {
+          if (n % 2 !== 0) {
+            answer += "바";
+          } else {
+            answer += "코";
+          }
+        }
+        return answer;
+      }
+
+      const result1 = repeatVaco(1) === "바";
+      const result2 = repeatVaco(2) === "바코";
+      const result3 = repeatVaco(4) === "바코바코";
+      const result4 = repeatVaco(5) === "바코바코바";
+      const result5 = repeatVaco(10) === "바코바코바코바코바코";
+
+      if (result1 && result2 && result3 && result4 && result5) {
+        alert("🎉");
+      }
+    </script>
+  </body>
+</html>

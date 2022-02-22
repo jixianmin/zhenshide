@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./toast.css" />
+    <link rel="stylesheet" href="./button.css" />
+  </head>
+  <body>
+    <button class="btn-blue btn-toast">Show live toast</button>
+    <button class="btn-blue btn-toast2">토스트2 열기</button>
+
+    <div class="toast">
+      <div class="toast-header">
+        <div class="square"></div>
+        <span class="toast-title">Bootstrap</span>
+        <span class="toast-datetime">11 mins ago</span>
+        <button class="btn-close"></button>
+      </div>
+      <div class="toast-body">Hellow, world! This is a toast message.</div>
+    </div>
+
+    <div class="toast2">
+      <div class="toast-header">
+        <div class="square"></div>
+        <span class="toast-title">부트스트랩</span>
+        <span class="toast-datetime">11초 전</span>
+        <button class="btn-close"></button>
+      </div>
+      <div class="toast-body">안녕, 세상!이건 토스트 메세지야.</div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //책 549
+      //document.querySelector(".btn-blue").onclick = function () {
+      //document.querySelector(".toast").style.display = "block"; };
+      //if (document.querySelector(".toast").style.display === "none"){document.querySelector(".toast").style.display = "block";}
+      //  else (document.querySelector(".toast").style.display === "block"){document.querySelector(".toast").style.display = "none"}
+      // document.querySelector(".btn-close").onclick = function () {
+      //   document.querySelector(".toast").style.display = "none";
+      // }; 위에껀 내가 아래껀 선생님 수업시간 할당 = 이고 같다는 === 이라서 조건문이 실패한것
+
+      /* const $btnToast = document.querySelector(".btn-toast");
+      $btnToast.addEventListener("click", () => {
+        const $toast = document.querySelector(".toast");
+        $toast.classList.add("active");
+      }); */
+      $(".btn-toast").on("click", () => {
+        $(".toast").addClass("active");
+        setTimeout(() => {
+          $(".toast").removeClass("active");
+        }, 3000);
+      });
+
+      $(".btn-close").on("click", () => {
+        $(".toast").removeClass("active");
+      });
+
+      //제이쿼리 문법 on jQuery 3.x <minified>사용 $가 함수명
+      $(".btn-toast2").on("click", () => {
+        $(".toast2").addClass("active");
+        setTimeout(() => {
+          $(".toast2").removeClass("active");
+        }, 3000);
+      });
+
+      $(".btn-close").on("click", () => {
+        $(".toast2").removeClass("active");
+      });
+
+      //닫힘 버튼을 눌렀을때 그 element의 부모중에서
+      //class가 "toast"인 애를 찾아서 걔의 active클래스를 제거
+      //$(".btn-close").click((event) => {
+      //   $(e.currentTarget).closest(".toast").removeClass("active");
+      //$(".btn-close").click(function() => {
+      //   $(this).closest(".toast").removeClass("active");
+      //}); 같은 동작이지만 접근 방식이 다름 정답이 없다 다양한 제이쿼리 메서드를 알아두자! 필요할때마다 가져다 쓰자!
+    </script>
+  </body>
+</html>
