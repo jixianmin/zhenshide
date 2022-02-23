@@ -11,7 +11,7 @@
       function repeatVaco(n) {
         let answer = "";
         for (let i = 0; i < n; i++) {
-          if (n % 2 === 1) {
+          if (i % 2 === 0) {
             answer += "바";
           } else {
             answer += "코";
@@ -29,7 +29,7 @@
       if (result1 && result2 && result3 && result4 && result5) {
         alert("🎉");
       }
-      // (n % 2 === 1) 502페이지 홀수일때 (n%2 === 0) 짝수일때
+      // (n % 2 === 1) 502페이지 홀수일때 (n%2 === 0) 짝수일때 n%2 !== 0
       /*let answer = "";
         for (let i = 0; i < n; i++) {
           if (n % 2 !== 0) {
@@ -39,6 +39,19 @@
           }
         }
         return answer;*/
+      /*
+        function repeatVaco(n) {
+   let answer = "";
+     for (let i = 0; i < n; i++) {
+      if (i % 2 === 0) {
+        answer += "바";
+       } else {
+       answer += "코";
+       }
+           }
+    return answer;
+      
+}*/
     </script>
   </body>
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+        margin: auto;
+        max-width: 600px;
+        border: solid #e7f1ff 1px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+      }
+      .accordion-header {
+        border-bottom: solid #e7f1ff 1px;
+        border-top: solid #e7f1ff 1px;
+        display: flex;
+        align-items: center;
+        padding: 16px 20px;
+        cursor: pointer;
+        justify-content: space-between;
+      }
+      .btn-close {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        transition: 0.2s ease-in;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+      .accordion-body {
+        padding: 10px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="accordion">
+      <li>
+        <div class="accordion-header">
+          Accordion Item #1<button class="btn-close"></button>
+        </div>
+        <div class="accordion-body">
+          This is the first item's accordion body. It is shown by default, until
+          the collapse plugin adds the appropriate classes that we use to style
+          each element. These classes control the overall appearance, as well as
+          the showing and hiding via CSS transitions. You can modify any of this
+          with custom CSS or overriding our default variables. It's also worth
+          noting that just about any HTML can go within the .accordion-body,
+          though the transition does limit overflow.
+        </div>
+      </li>
+      <li>
+        <div class="accordion-header">
+          Accordion Item #2<button class="btn-close"></button>
+        </div>
+        <div class="accordion-body">
+          This is the second item's accordion body. It is hidden by default,
+          until the collapse plugin adds the appropriate classes that we use to
+          style each element. These classes control the overall appearance, as
+          well as the showing and hiding via CSS transitions. You can modify any
+          of this with custom CSS or overriding our default variables. It's also
+          worth noting that just about any HTML can go within the
+          .accordion-body, though the transition does limit overflow.
+        </div>
+      </li>
+      <li>
+        <div class="accordion-header">
+          Accordion Item #3<button class="btn-close"></button>
+        </div>
+        <div class="accordion-body">
+          This is the third item's accordion body. It is hidden by default,
+          until the collapse plugin adds the appropriate classes that we use to
+          style each element. These classes control the overall appearance, as
+          well as the showing and hiding via CSS transitions. You can modify any
+          of this with custom CSS or overriding our default variables. It's also
+          worth noting that just about any HTML can go within the
+          .accordion-body, though the transition does limit overflow.
+        </div>
+      </li>
+    </ul>
+    <script>
+      const accordionHeaderList =
+        document.getElementsByClassName("accordion-header");
+      const accordionbodyList =
+        document.getElementsByClassName("accordion-body");
+      const btnCloseList = document.getElementsByClassName("btn-close");
+      for (let i = 0; i < accordionHeaderList.length; i++) {
+        const $accordionHeader = accordionHeaderList[i];
+        const $accordionbody = accordionbodyList[i];
+        const $btnClose = btnCloseList[i];
+        $accordionHeader.onclick = () => {
+          if ($accordionbody.style.display === "none") {
+            $accordionbody.style.display = "block";
+            $accordionHeader.style.backgroundColor = "#E7F1FF";
+            $accordionHeader.style.color = "#0C63E4";
+            $btnClose.style.transform = "rotate(180deg)";
+          } else {
+            $accordionbody.style.display = "none";
+            $accordionHeader.style.backgroundColor = "#ffffff";
+            $accordionHeader.style.color = "#212529";
+            $btnClose.style.transform = "rotate(0deg)";
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
