@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .carousel {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        overflow: hidden;
+      }
+      .carousel-list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        transition: transform 1s;
+      }
+      .carousel-image {
+        width: 800px;
+        height: 600px;
+      }
+      .btn-prev,
+      .btn-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .btn-prev {
+        left: 20px;
+      }
+      .btn-next {
+        right: 20px;
+      }
+      .button-list {
+        position: absolute;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <ul class="carousel-list">
+        <li class="carousel-item active">
+          <img
+            src="https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png"
+            class="carousel-image"
+          />
+        </li>
+        <li class="carousel-item">
+          <img
+            src="https://t1.daumcdn.net/cfile/tistory/9946A4505F5817A60D"
+            class="carousel-image"
+          />
+        </li>
+        <li class="carousel-item">
+          <img
+            src="https://t1.daumcdn.net/cfile/tistory/9923BB425F582E9917"
+            class="carousel-image"
+          />
+        </li>
+        <li class="carousel-item">
+          <img
+            src="https://t1.daumcdn.net/cfile/tistory/999E423A5F582E9918"
+            class="carousel-image"
+          />
+        </li>
+      </ul>
+      <button class="btn-prev">이전</button>
+      <button class="btn-next">다음</button>
+      <ul class="button-list">
+        <li><button>1</button></li>
+        <li><button>2</button></li>
+        <li><button>3</button></li>
+        <li><button>4</button></li>
+      </ul>
+    </div>
+    <script>
+      /*const carouselItemList = document.getElementsByClassName("carousel-item");
+
+      for (let i = 0; i < carouselItemList.length; i++) {
+        const $carouselItemList = carouselItemList[i];
+
+        console.log(document.getElementsByClassName("btn-prev")[0]);
+        document.getElementsByClassName("btn-prev")[0].onclick = function () {
+          $carouselItemList.style.transform = "translateX(-800px)";
+        };
+        document.getElementsByClassName("btn-next")[0].onclick = function () {
+          $carouselItemList.style.transform = "translateX(800px)";
+        };
+      }*/ //이걸로 실행시 마지막 이미지만 움직인다 그래서 아래처럼 통으로해야한다
+      let index = 0;
+      const carouselList = document.getElementsByClassName("carousel-list");
+      for (let i = 0; i < carouselList.length; i++) {
+        const $carouselList = carouselList[i];
+        const $carouselListLength = $carouselList.parentElement.children.length;
+        document.getElementsByClassName("btn-prev")[0].onclick = function () {
+          index = index === 0 ? $carouselListLength - 1 : index - 1;
+          $carouselList.style.transform = "translateX(" + -index * 800 + "px)";
+        };
+        document.getElementsByClassName("btn-next")[0].onclick = function () {
+          index = index === $carouselListLength - 1 ? 0 : index + 1;
+          $carouselList.style.transform = "translateX(" + -index * 800 + "px)";
+        };
+        document.getElementsByClassName("button-list")[0].onclick =
+          function () {
+            index = this.innerText - 1;
+            carouselList.style.transform = "translateX(" + -index * 800 + "px)";
+          };
+      }
+      /*function findMinNumber(arr) {
+  let min = arr[0];
+  for(let i = 0;i < arr.length; i++){
+    if(min < arr[i + 1]){
+      min = arr[i]
+    }else{
+      min = arr[i + 1]
+    }
+  }return min
+}
+*/
+
+      //carousel2.js를 참고
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+                  const arr1 = [10];
+                  const arr2 = [4, 10, 1, 5];
+                  const arr3 = [13, 5, 7, 3, 10, 9];
+
+                  function findMinNumber(arr) {
+                    let answer = 0;
+                    for (i = 0; i < arr.length; i++ ) {
+                      if (answer < arr[i]) {
+                            answer += arr[i];
+                      } else {
+                            answer += arr[i + 1]
+                      }
+                    return answer;
+                  }
+                  /*function findMinNumber(arr) {
+              let min = arr[0];
+              for(let i = 0;i < arr.length; i++){
+                if(arr[i] < arr[i + 1]){
+                  min=arr[i]
+                }
+              }return min
+            }*/
+
+                  const result1 = findMinNumber(arr1) === 10;
+                  const result2 = findMinNumber(arr2) === 1;
+                  const result3 = findMinNumber(arr3) === 3;
+
+                  if (result1 && result2 && result3) {
+                    alert("🎉");
+                  }
+
+                  /*function findMinNumber(arr) {
+                    let min = arr[0};
+                    for (i = 0; i < arr.length; i++ ) {
+                      if (0 < arr[i]) {
+                            min += arr[i];
+                      } else {
+                            min += arr[i + 1]
+                      }
+                    return min;
+
+      }*/
+    </script>
+  </body>
+</html>

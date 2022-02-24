@@ -1,0 +1,19 @@
+body {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f6f7;
+}
+header {
+  display: flex;
+  background-color: #000000;
+  height: 70px;
+  align-items: center;
+  width: 100vw;
+}
+#Nepp-img {
+  width: 99px;
+  height: 28px;
+  margin: 0 0 0 25vh;
+}
