@@ -14,38 +14,70 @@
   </head>
   <body>
     <header>
-      <img
-        id="Nepp-img"
-        src="https://www.nepp.kr/_nuxt/img/group-21@3x%20(2).af4a332.png"
-      />
+      <div id="headercontainer">
+        <img
+          id="Nepp-img"
+          src="https://www.nepp.kr/_nuxt/img/group-21@3x%20(2).af4a332.png"
+        />
+      </div>
     </header>
     <main>
       <div class="main-container">
+        <div class="writeBox">
           <h2 class="hellow">회원가입</h2>
           <p>아이디</p>
-          <input type="text" id="userId" placeholder="아이디로 사용됩니다">
+          <input type="text" id="userId" placeholder="아이디로 사용됩니다" />
           <p>이메일</p>
-          <input type="text" id="userEmail" placeholder="비밀번호를 찾을때 수신할 메일주소로 사용됩니다.">
+          <input
+            type="text"
+            id="userEmail"
+            placeholder="비밀번호를 찾을때 수신할 메일주소로 사용됩니다."
+          />
           <p>비밀번호</p>
-          <input type="text" id="userPassword" placeholder="최소 8자리 이상으로 입력해주세요.">
+          <input
+            type="text"
+            id="userPassword"
+            placeholder="최소 8자리 이상으로 입력해주세요."
+          />
           <p>비밀번호 확인</p>
-          <input type="text" id="userPasswordreconfirm">
+          <input type="text" id="userPasswordreconfirm" />
           <p>이름</p>
-          <input type="text" id="userName">
+          <input type="text" id="userName" />
           <p>연락처</p>
-          <input type="text" id="phone" placeholder="전화번호-없이 입력"><br>
-          <input type="text" id="CertificationNumber" placeholder="인증번호 4자리">
-          <p>약관 및 개인정보처리방안에 대해 동의합니다<input type="checkbox" name="mailing" id="yes" value="yes" required></p>
-          <button id="signup"><a href="./login.html">회원가입</a></button>
+          <div id="positionRelative">
+            <input type="text" id="phone" placeholder="전화번호-없이 입력" />
+            <button id="positionAbsolute1">인증번호 요청</button>
 
+            <input
+              type="text"
+              id="CertificationNumber"
+              placeholder="인증번호 4자리"
+            />
+            <button id="positionAbsolute1">인증번호 요청</button>
+            <button id="positionAbsolute2">05:00</button>
+          </div>
+          <p>
+            약관 및 개인정보처리방안에 대해 동의합니다<input
+              type="checkbox"
+              name="mailing"
+              id="yes"
+              value="yes"
+              required
+            />
+          </p>
+          <button id="signup"><a href="./login.html">회원가입</a></button>
+        </div>
+      </div>
     </main>
     <footer class="footer">
-      <div class="footerbox">
-        <ul>
-          <li>회사소개</li>
-          <li>개인정보취급방침</li>
-          <li>이용약관</li>
-        </ul>
+      <div class="footerContentsBox">
+        <div class="footerbox">
+          <ul>
+            <li>회사소개</li>
+            <li>개인정보취급방침</li>
+            <li>이용약관</li>
+          </ul>
+        </div>
       </div>
       <div class="footer-container">
         <div id="footercontainer1">

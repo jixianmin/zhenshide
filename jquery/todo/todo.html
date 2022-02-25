@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>입력</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+        height: 400px;
+        background-color: orange;
+        background: linear-gradient(to left, orange, rgb(255, 223, 164));
+        margin: auto;
+        text-align: center;
+      }
+      h1 {
+        color: white;
+        text-shadow: 5px 5px 5px gray;
+      }
+      ul {
+        list-style: none;
+      }
+      li {
+        color: white;
+      }
+      .todolistinput {
+        position: relative;
+      }
+      .todolistinput input {
+        width: 240px;
+        height: 30px;
+        border: none;
+      }
+      .btn {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        background-color: white;
+        color: rgb(255, 115, 0);
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>TODO LIST</h1>
+        <form id="form">
+          <div class="todolistinput">
+            <input type="text" class="subject" autofocus />
+            <button class="btn">추가</button>
+            <button type="button" id="btb2">전체 삭제</button>
+          </div>
+        </form>
+      </header>
+      <main>
+        <ul class="itemList">
+          <li>
+            <label><input type="checkbox" />장보기</label> <button>삭제</button>
+          </li>
+          <li>
+            <label><input type="checkbox" />청소하기</label>
+            <button>삭제</button>
+          </li>
+        </ul>
+      </main>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#form").on("submit", (e) => {
+        e.preventDefault();
+        //const jsValue = document.getElemetById("input-text").value
+        //document.getElementById("input-text").value = "대입했다";
+        const value = $(".subject").val();
+        if (value === "") return;
+        $(".itemList").append(`
+          <li>
+            <label><input type="checkbox" />${value}</label>
+            <button>삭제</button>
+          </li>`);
+        $(".subject").val("");
+        $(".subject").focus();
+      });
+      //전체삭제
+      $("#btn2").click(() => {
+        $(".itemList"), html("");
+      });
+    </script>
+  </body>
+</html>

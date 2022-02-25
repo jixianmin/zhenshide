@@ -12,8 +12,11 @@ header {
   align-items: center;
   width: 100vw;
 }
+#headercontainer {
+  width: 1100px;
+  margin: auto;
+}
 #Nepp-img {
   width: 99px;
   height: 28px;
-  margin: 0 0 0 25vh;
 }

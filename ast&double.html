@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr1 = [1, 2, 1];
+      const arr2 = [1, 3, 5, 3, 1];
+      const arr3 = [1, 6, 8, 4, 2, 3];
+
+      function doubleArray(arr) {
+        let answer = [];
+        let array = 0;
+        let doubleArray = 0;
+        for (doubleArray = 0; doubleArray < 2; doubleArray++) {
+          for (let i = 0; i < arr.length; i++) {
+            array = array + arr[i];
+            answer.push(array);
+          }
+        }
+        return answer;
+      }
+
+      const result1 = doubleArray(arr1); // [1, 2, 1, 1, 2, 1]를 반환해야 합니다.
+      const result2 = doubleArray(arr2); // [1, 3, 5, 3, 1, 1, 3, 5, 3, 1]를 반환해야 합니다.
+      const result3 = doubleArray(arr3); // [1, 6, 8, 4, 2, 3, 1, 6, 8, 4, 2, 3]를 반환해야 합니다.
+
+      if (
+        checkResult(result1, arr1) &&
+        checkResult(result2, arr2) &&
+        checkResult(result3, arr3)
+      ) {
+        alert("🎉");
+      }
+    </script>
+  </body>
+</html>

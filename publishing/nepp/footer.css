@@ -2,13 +2,20 @@
   display: flex;
   flex-direction: column;
   background-color: rgba65, 65, 65, 0;
+  justify-content: center;
 }
-.footerbox {
+.footerContentsBox {
   color: #4a4a4a;
   padding: 12px 0px;
   margin: 0px 60px 0px 0px;
   border: 1px solid rgb(170, 170, 170);
   width: 100vw;
+}
+.footerbox {
+  width: 1000px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 .footerbox ul {
   display: flex;
@@ -24,13 +31,23 @@
   justify-content: center;
   align-items: center;
   font-size: 12px;
+  flex-wrap: nowrap;
+  width: 1400px;
+  margin: auto;
 }
-.footercontainer1 {
-  margin: 0px 0px 0px 200px;
+#footercontainer1 {
+  margin: 0px 0px 0px 0px;
+}
+#footercontainer1 img {
+  margin-right: 50px;
 }
 #footercontainer2 {
-  margin-right: 100px;
+  width: 450px;
+  margin-right: 250px;
+  font-size: 14px;
 }
 #footercontainer3 {
-  margin-right: 100px;
+  margin: 20px 0px 20px 0px;
+  padding: 0px 100px 0px 30px;
+  border-left: 1px solid grey;
 }

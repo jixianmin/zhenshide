@@ -5,15 +5,24 @@ main {
   align-items: center;
 }
 .main-container {
-  margin-top: 80px;
+  margin-top: 70px;
   background-color: white;
-  width: 900px;
+  width: 1100px;
   height: 1200px;
   position: relative;
-  text-align: center;
+  margin-bottom: 70px;
+}
+.writeBox {
+  width: 400;
+  margin-left: 350px;
+}
+.writeBox p {
+  margin-bottom: 5px;
 }
 .hellow {
-  margin: 50px;
+  margin-top: 70px;
+  margin-left: 140px;
+  margin-bottom: 50px;
 }
 #userId {
   width: 400px;
@@ -66,7 +75,6 @@ main {
   border: 1px solid #ccc;
   background-color: #fff;
   padding-left: 15px;
-  margin-bottom: 10px;
   font-size: 12px;
 }
 #CertificationNumber {
@@ -75,8 +83,36 @@ main {
   border: 1px solid #ccc;
   background-color: #fff;
   padding-left: 15px;
+  margin-top: 3px;
   margin-bottom: 10px;
   font-size: 12px;
+}
+#positionRelative {
+  position: relative;
+  width: 418.98px;
+}
+#positionAbsolute1 {
+  font-size: 12px;
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 7px 7px;
+  cursor: pointer;
+}
+#positionAbsolute2 {
+  position: absolute;
+  right: 10px;
+  bottom: 14px;
+  background-color: rgb(182, 180, 180);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 7px 28px;
+  cursor: pointer;
 }
 #signup {
   width: 400px;
@@ -86,6 +122,7 @@ main {
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
 }
 a {
   text-decoration-line: none;
