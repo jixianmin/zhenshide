@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자쪼개기코테자릴수더하기</title>
+</head>
+<body>
+<script>
+  const n1 = 370;
+  const n2 = 1357;
+  const n3 = 33333;
+
+function splitNumber(num) {
+  let i = num.toString; //숫자를 문자열로
+  let j = i.split(","); //문자를 배열로
+  return j
+}
+
+const result1 = splitNumber(n1); // [3, 7, 0]를 반환해야 합니다.
+const result2 = splitNumber(n2); // [1, 3, 5, 7]를 반환해야 합니다.
+const result3 = splitNumber(n3); // [3, 3, 3, 3, 3]를 반환해야 합니다.
+
+if (
+  checkResult(result1, [3, 7, 0]) &&
+  checkResult(result2, [1, 3, 5, 7]) &&
+  checkResult(result3, [3, 3, 3, 3, 3])
+) {
+  alert("🎉");
+}
+
+</script>
+</body>
+</html>
