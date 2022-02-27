@@ -17,8 +17,9 @@
         let array = 0;
         for (let double = 0; double < 2; double++) {
           for (let i = 0; i < arr.length; i++) {
-            array = array + arr[i];
-            answer.push(array);
+            answer.push(arr[i])
+            /*array = array + arr[i];
+            answer.push(array);*/
           }//return answeranswer
         }
       } return answer;
@@ -34,6 +35,34 @@
       ) {
         alert("🎉");
       }
+      /*function doubleArray(받은배열) {
+    let 새배열 =[]
+    let 새배열인덱스 = 0 
+    for (let index = 0; index < 받은배열.length; index++) {
+        새배열[새배열인덱스] = 받은배열[index];
+        새배열인덱스++
+    }
+    for (let index = 0; index < 받은배열.length; index++) {
+        새배열[새배열인덱스] = 받은배열[index];
+        새배열인덱스++
+    }
+    return 새배열    이게 초보자용 
+    function doubleArray(arr) {
+  return arr.concat(arr)
+}
+}*/
+/*function doubleArray(arr) {
+  let answer = [];
+  let array = 0
+  for(let idex = 0;index < arr.length; index++) {
+    answer[array] = arr[index];
+    array++
+  }
+  for(let idex = 0;index < arr.length; index++) {
+    answer[array] = arr[index]
+    array++
+  }return answer
+}*/
     </script>
   </body>
 </html>
