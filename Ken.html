@@ -8,10 +8,28 @@
   </head>
   <body>
     <script>
+    const vaco1 = ["Jett", "Ken"];
+    const vaco2 = ["Leo", "Kim", "Ken", "Lee"];
+    const vaco3 = ["Ken", "Justin", "Jett"];
+
+    function findKen(arr) {
       function findKen(arr) {
         let n = arr.indexOf("Ken"); //O대문자 그리고 index함수라 소괄호 써라
         return `켄은 ${n}에 있다`;
-      } //절대 건들지 말라 스타터킷 자바스크립트3 켄을 찾아라
+      } //절대 건들지 말라 스타터킷 자바스크립트3 켄을 찾아라\
+    }
+    const result1 = (findKen(vaco1) === "켄은 1에 있다");
+    const result2 = (findKen(vaco2) === "켄은 2에 있다");
+    const result3 = (findKen(vaco3) === "켄은 0에 있다");
+
+    if (
+    result1 &&
+    result2 &&
+    result3
+    ) {
+    alert("🎉");
+    }
+
     </script>
   </body>
 </html>
