@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트리스너</title>
+  <style>
+    .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.lightWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: black;
+  width: 35vh;
+  height: 60vh;
+}
+
+.lightOff {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background: white;
+  width: 80px;
+  height: 80px;
+}
+
+.lightOn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background: white;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+button {
+  height: 10vh;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lightWrapper">
+      <span class="lightOn red">Stop</span>
+      <span class="lightOn orange">Pause</span>
+      <span class="lightOn green">Go</span>
+    </div>
+    <button>전체 불 끄기 💡</button>
+  </div>
+  <script>
+const buttonElement = document.querySelector("button");
+
+const lightOnAll = document.querySelectorAll(".lightOn")
+
+const lightOn = document.querySelector(".lightOn")
+
+buttonElement.addEventListener("click", function () {
+  const lightOn2 = document.querySelectorAll(".lightOn");
+  for (let i = 0; i < lightOn2.length; i++){
+  lightOn2[i].style.backgroundColor = "white"  
+};
+});
+
+lightOnAll[0].addEventListener("click", function () {
+  const red = document.querySelector(".red");
+  const orange = document.querySelector(".orange");
+  const green = document.querySelector(".green");
+  red.style.backgroundColor = "red";
+  orange.style.backgroundColor = "orange";
+  green.style.backgroundColor = "green";
+})
+lightOnAll[1].addEventListener("click", function () {
+  const red = document.querySelector(".red");
+  const orange = document.querySelector(".orange");
+  const green = document.querySelector(".green");
+  red.style.backgroundColor = "red";
+  orange.style.backgroundColor = "orange";
+  green.style.backgroundColor = "green";
+})
+lightOnAll[2].addEventListener("click", function () {
+  const red = document.querySelector(".red");
+  const orange = document.querySelector(".orange");
+  const green = document.querySelector(".green");
+  red.style.backgroundColor = "red";
+  orange.style.backgroundColor = "orange";
+  green.style.backgroundColor = "green";
+});
+/*
+for(i = 0; i < lightOnAll.length; i++){
+lightOnAll[i].addEventListener("click", function () {
+  const red = document.querySelector(".red");
+  const orange = document.querySelector(".orange");
+  const green = document.querySelector(".green");
+  red.style.backgroundColor = "red";
+  orange.style.backgroundColor = "orange";
+  green.style.backgroundColor = "green";
+});
+};*/
+/*https://developer0809.tistory.com/153*/
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <li>first</li>
+    </ul>
+  </div>
+  <script>
+   const bodyElement = document.querySelector("body");
+const something = document.createElement("p");
+ something.textContent = "I am a paragraph";
+bodyElement.appendChild(something)
+const container = document.querySelector(".container");
+    const ulElement = document.querySelector("ul");
+    const secondLi = document.createElement("li");
+    secondLi.textContent = "second";
+    ulElement.appendChild(secondLi);
+    container.appendChild(ulElement);
+    //
+    const task = ["Code", "Run", "Eat", "Sleep"];
+const ulElement = document.querySelector("ul");
+for(let i=0; i < task.length; i ++){
+  createLi = document.createElement("li");
+  createLi.textContent = task[i];
+  ulElement.appendChild(createLi);
+}
+ulElement.style.listStyle = "none"
+  </script>
+</body>
+</html>
