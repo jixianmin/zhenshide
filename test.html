@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-    function doSomething () {
-  console.log('start!');
-  var a = 3;
-  var b = 2;
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function doSomething() {
+        console.log("start!");
+        var a = 3;
+        var b = 2;
 
-  if (a > b) {
-    console.log('a is bigger than b!');
-    return; //함수 내부에서 return 구문이 실행될 경우 해당 함수가 종료
-  }
+        if (a > b) {
+          console.log("a is bigger than b!");
+          return; //함수 내부에서 return 구문이 실행될 경우 해당 함수가 종료
+        }
 
-  console.log('I am the last console.log!');
-}
+        console.log("I am the last console.log!");
+      }
 
-doSomething();
-console.log(1)
-console.log("1")
+      doSomething();
+      console.log(1);
+      console.log("1");
 
-function doSomething2 () {
-  var a = 3;
-  var b = 2;
+      function doSomething2() {
+        var a = 3;
+        var b = 2;
 
-  if (a > b) {
-    return;
-  }
+        if (a > b) {
+          return;
+        }
 
-  return 3;
-}
+        return 3;
+      }
 
-var a = doSomething2();
-console.log(a);
+      var a = doSomething2();
+      console.log(a);
 
-const subtraction = function (x, y) {
-  if(x > y) {
-    return x - y;
-  } else  {
-    return y - x;
-  }
-};
-const foodList = ["Pizza", "Hamburger", "Chicken", "Steak"];
+      const subtraction = function (x, y) {
+        if (x > y) {
+          return x - y;
+        } else {
+          return y - x;
+        }
+      };
+      const foodList = ["Pizza", "Hamburger", "Chicken", "Steak"];
 
-const food1 = foodList[0];
-const food2 = foodList[foodList.length - 1];
+      const food1 = foodList[0];
+      const food2 = foodList[foodList.length - 1];
 
-const result = food1 + food2;
+      const result = food1 + food2;
 
-console.log(result)
-
-</script>
+      console.log(result);
+    </script>
+  </body>
+</html>

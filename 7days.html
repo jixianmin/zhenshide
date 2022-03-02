@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-  const days = ["일", "월", "화", "수", "목", "금", "토"];
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const days = ["일", "월", "화", "수", "목", "금", "토"];
 
-for(i = 0; i < days.length; i++){
-  const newP = document.createElement("p")
-  const th = document.querySelectorAll("th");
- th[i].textContent = days[i]
-  th[i].appendChild(newP)[i]
-};
-/*책626페이지 p를 b로 대체 가능함*/
-/*const date = new Date();
+      for (i = 0; i < days.length; i++) {
+        //const newP = document.createElement("p");
+        const th = document.querySelectorAll("th");
+        th[i].textContent = days[i];
+        //th[i].appendChild(newP)[i];
+      }
+      /*책626페이지 p를 b로 대체 가능함*/
+      /*const date = new Date();
+
 
 const days = ["일", "월", "화", "수", "목", "금", "토","","",1,2,3,4,5];
 
@@ -27,6 +28,6 @@ for(i = 0; i < days.length; i++){
  th[i].textContent = days[i]
   th[i].appendChild(newP)[i]
 };*/
-  </script>
-</body>
+    </script>
+  </body>
 </html>

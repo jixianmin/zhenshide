@@ -74,23 +74,26 @@
               value="<%= name %>"
             />
             <input id="input-text" name="text" />
-            <button class="btn">추가</button>
+            <button class="btn">입력</button>
             <button type="button" id="btn-delete-all">전체 삭제</button>
+            <button type="button" id="btn-check-all">전체 체크</button>
+            <button type="button" id="btn-uncheck-all">전체 해제</button>
           </div>
         </form>
       </header>
       <main>
         <ul class="todo-list">
           <% for(let i = 0; i < todoList.length; i++){ %>
-          <li class="todo-item">
+          <li class="todo-item <%=todoList[i].isDone?'done':''%>">
             <label
-              ><input type="checkbox" class="input-check" /><span
-                class="todo-text"
-                ><%=todoList[i].text%></span
-              ></label
+              ><input type="checkbox" class="input-check"
+              data-id="<%=todoList[i].id%>" <%=todoList[i].isDone?'checked':''%>
+              /><span class="todo-text"><%=todoList[i].text%></span></label
             >
             <button class="btn-edit" data-id="<%=todoList[i].id%>">수정</button>
-            <button class="btn-delete">삭제</button>
+            <button class="btn-delete" data-id="<%=todoList[i].id%>">
+              삭제
+            </button>
           </li>
           <%}%>
         </ul>
@@ -118,19 +121,19 @@
           },
           success: (result) => {
             console.log(result);
-          },
-        });
-
-        $(".todo-list").append(`
+            const id = result.id;
+            $(".todo-list").append(`
           <li class="todo-item">
             <label>
               <input type="checkbox" class="input-check"/><span
                 class="todo-text">${value}</span>
             </label>
-            <button class="btn-edit">수정하기</button>
-            <button class="btn-delete">삭제</button>
+            <button class="btn-edit" data-id="${id}">수정하기</button>
+            <button class="btn-delete" data-id="${id}">삭제</button>
           </li>
       `);
+          },
+        });
 
         $("#input-text").val("");
         $("#input-text").focus();
@@ -138,11 +141,30 @@
 
       // 전체삭제
       $("#btn-delete-all").click(() => {
-        $(".todo-list").html("");
+        const name = $("#input-name").val();
+        const request = {
+          url: "/todo",
+          method: "DELETE",
+          data: {
+            name: name,
+          },
+          success: (result) => {
+            $(".todo-list").html("");
+          },
+        };
+        $.ajax(request);
       });
-
+      //삭제
       $(".todo-list").on("click", ".btn-delete", (e) => {
         $(e.currentTarget).parent().remove();
+        const id = $(e.currentTarget).data("id");
+        $.ajax({
+          url: `/todo/${id}`,
+          method: "DELETE",
+          success: () => {
+            $(e.currentTarget).parent().remove();
+          },
+        });
       });
       /*4.할일 체크하기 -li에 "done"클래스 붙었을때 css변경 -checkbox change이벤트 감지 -$(document).on("change",".input-check",(e)=>{})
        -checkbox값 추출(const checked = e.currentTarget.checked) -그 값에 따라 해당하는 li에 "done"클래스 붙일지 뗄지 결정
@@ -150,11 +172,21 @@
               ->node.js,express,database*/
       $(document).on("change", ".input-check", function () {
         const checked = $(this).prop("checked");
-        if (checked) {
-          $(this).closest(".todo-item").addClass("done");
-        } else {
-          $(this).closest(".todo-item").removeClass("done");
-        }
+        const id = $(this).data("id");
+        $.ajax({
+          url: `/todo/${id}`,
+          method: "PATCH",
+          data: {
+            isDone: checked ? 1 : 0,
+          },
+          success: (result) => {
+            if (checked) {
+              $(this).closest(".todo-item").addClass("done");
+            } else {
+              $(this).closest(".todo-item").removeClass("done");
+            }
+          },
+        });
       });
 
       $(document).on("click", ".btn-edit", function () {
@@ -171,6 +203,16 @@
           },
         });
         $(this).parent().find(".todo-text").text(text);
+      });
+      $("#btn-check-all").click(() => {
+        //서버: 전체체크 api 실행 (isDone : 1)
+        //클라이언트:모든 checkbox에 체크,
+        //모든 li에 active(done)클래스 추가
+      });
+      $("#btn-uncheck-all").click(() => {
+        //서버: 전체체크해제 api 실행 (isDone : 0)
+        //클라이언트:모든 checkbox에 체크 해제,
+        //모든 li에 active(done)클래스 제거
       });
     </script>
   </body>
