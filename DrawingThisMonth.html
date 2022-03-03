@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This Month</title>
+  </head>
+  <body>
+    <script>
+      const days = ["일", "월", "화", "수", "목", "금", "토"];
+      body.appendChild(newTable);
+      newTable.appendChild(newTr);
+      for (i = 0; i < days.length; i++) {
+        const newTable = document.createElement("table");
+        const newTr = document.createElement("tr");
+        const newTh = document.createElement("th");
+        body = document.querySelector("body");
+        newTr.appendChild(newTh);
+        newTh.textContent = days[i];
+
+        newTable.style.borderCollapse = "collapse";
+        newTh.style.border = "1px solid black";
+      }
+      /*228,619*/
+      /*const days = ["일", "월", "화", "수", "목", "금", "토"];
+
+      for (i = 0; i < days.length; i++) {
+        const newTable = document.createElement("table");
+        const newTr = document.createElement("tr");
+        const newTh = document.createElement("th");
+        body = document.querySelector("body");
+        body.appendChild(newTable);
+        newTable.appendChild(newTr);
+        newTr.appendChild(newTh);
+        newTh.textContent = days[i];
+
+        newTable.style.borderCollapse = "collapse";
+        newTh.style.border = "1px solid black";
+      }
+      */
+    </script>
+  </body>
+</html>

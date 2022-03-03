@@ -8,52 +8,18 @@
   </head>
   <body>
     <script>
-      function doSomething() {
-        console.log("start!");
-        var a = 3;
-        var b = 2;
-
-        if (a > b) {
-          console.log("a is bigger than b!");
-          return; //함수 내부에서 return 구문이 실행될 경우 해당 함수가 종료
-        }
-
-        console.log("I am the last console.log!");
+      function createArray(arr1, arr2) {
+        answer = {};
+        answer.arr1 = arr2;
+        console.log(answer);
       }
 
-      doSomething();
-      console.log(1);
-      console.log("1");
-
-      function doSomething2() {
-        var a = 3;
-        var b = 2;
-
-        if (a > b) {
-          return;
-        }
-
-        return 3;
-      }
-
-      var a = doSomething2();
-      console.log(a);
-
-      const subtraction = function (x, y) {
-        if (x > y) {
-          return x - y;
-        } else {
-          return y - x;
-        }
-      };
-      const foodList = ["Pizza", "Hamburger", "Chicken", "Steak"];
-
-      const food1 = foodList[0];
-      const food2 = foodList[foodList.length - 1];
-
-      const result = food1 + food2;
-
-      console.log(result);
+      const result1 = createArray(["Jett", "Ken"], [30, 40]);
+      const result2 = createArray(["Math", "Science", "English"], [85, 90, 75]);
+      const result3 = createArray(
+        ["Pizza", "Salad", "Pasta", "Steak"],
+        [3, 4, 2, 1]
+      );
     </script>
   </body>
 </html>

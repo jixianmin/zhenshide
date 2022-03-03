@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>객체만들기</title>
-</head>
-<body>
-  <script>
-    function createArray(arr1, arr2) {
-      let j =0;
-       let answer = array();
-        for(let i = 0; i < 0; i++){
-         createArray.arr1[i]=arr2[j]
-          j +=1
-            array.push(arr1);
-      }return answer
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체만들기</title>
+  </head>
+  <body>
+    <script>
+      function createArray(arr1, arr2) {
+        answer = {};
+        answer.arr1 = arr2;
+        console.log(answer);
+      }
+      return answer;
 
-    const result1 = createArray(["Jett", "Ken"], [30, 40]);
-    const result2 = createArray(["Math", "Science", "English"], [85, 90, 75]);
-    const result3 = createArray(["Pizza", "Salad", "Pasta", "Steak"], [3, 4, 2, 1]);
+      const result1 = createArray(["Jett", "Ken"], [30, 40]);
+      const result2 = createArray(["Math", "Science", "English"], [85, 90, 75]);
+      const result3 = createArray(
+        ["Pizza", "Salad", "Pasta", "Steak"],
+        [3, 4, 2, 1]
+      );
 
-    if (
-    checkResult(result1, { Jett: 30, Ken: 40 }) &&
-    checkResult(result2, { Math: 85, Science: 90, English: 75 }) &&
-    checkResult(result3, { Pizza: 3, Salad: 4, Pasta: 2, Steak: 1 }) 
-    ) {
-    alert("🎉");
-    }
-
-  </script>
-</body>
+      if (
+        checkResult(result1, { Jett: 30, Ken: 40 }) &&
+        checkResult(result2, { Math: 85, Science: 90, English: 75 }) &&
+        checkResult(result3, { Pizza: 3, Salad: 4, Pasta: 2, Steak: 1 })
+      ) {
+        alert("🎉");
+      }
+      /*
+      function createArray(arr1, arr2) {
+  let answer = {};
+  for(i = 0 ;i < arr1.length; i++){
+    arr1[i] = answer
+    arr2[i] = answer.arr1
+  }
+}*/
+    </script>
+  </body>
 </html>

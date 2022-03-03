@@ -37,12 +37,13 @@ function splitNumber(num) {
   splitNumber(2854) 
   힌트 
   결과:8 
-  let answer = []
 function splitNumber(num) {
-  let text = String(num);
-  for (let i = 0; i < text.length; i++) {
-            answer.push(text[i]);
+  let text = String(num)
+  let answer = []
+    for (let i = 0; i < text.length; i++) {
+            answer.push(Number(text[i]));
   }
+  return answer
 }
   */
     </script>
