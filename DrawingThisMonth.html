@@ -8,37 +8,39 @@
   </head>
   <body>
     <script>
-      const days = ["일", "월", "화", "수", "목", "금", "토"];
-      body.appendChild(newTable);
-      newTable.appendChild(newTr);
-      for (i = 0; i < days.length; i++) {
-        const newTable = document.createElement("table");
-        const newTr = document.createElement("tr");
-        const newTh = document.createElement("th");
-        body = document.querySelector("body");
-        newTr.appendChild(newTh);
-        newTh.textContent = days[i];
-
-        newTable.style.borderCollapse = "collapse";
-        newTh.style.border = "1px solid black";
-      }
       /*228,619*/
-      /*const days = ["일", "월", "화", "수", "목", "금", "토"];
+      const days = ["일", "월", "화", "수", "목", "금", "토"];
+      const newTable = document.createElement("table");
+      const newTr = document.createElement("tr");
+      let day = -3
 
-      for (i = 0; i < days.length; i++) {
-        const newTable = document.createElement("table");
-        const newTr = document.createElement("tr");
+      for (let i = 0; i < days.length; i++) {
         const newTh = document.createElement("th");
         body = document.querySelector("body");
         body.appendChild(newTable);
         newTable.appendChild(newTr);
         newTr.appendChild(newTh);
         newTh.textContent = days[i];
-
         newTable.style.borderCollapse = "collapse";
         newTh.style.border = "1px solid black";
       }
-      */
+      for (let j = 0; j < 5; j++){
+        const newTr = document.createElement("tr");
+        body.appendChild(newTable);
+        newTable.appendChild(newTr);
+        newTable.style.borderCollapse = "collapse";
+        for(let h = 0; h < 7; h++){
+          const newTd = document.createElement("td");
+          newTd.textContent = day;
+          newTd.style.border = "1px solid black";
+          newTr.appendChild(newTd);
+          day += 1;
+          if(day > 0 && day < 31){
+            newTd.textContent = day;
+          }else{newTd.textContent = "";}
+        }
+      }
+     
      //creatElement가 th를 건드린다 getElementsBytagName같은걸로  th를 불러오자
     </script>
   </body>
