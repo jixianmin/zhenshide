@@ -9,11 +9,18 @@
   <body>
     <script>
       function createArray(arr1, arr2) {
-        answer = {};
-        answer.arr1 = arr2;
-        console.log(answer);
+         let answer={};
+         for(i = 0; i < arr1.length; i++){
+         answer[arr1[i]] = arr2[i];
+        }return answer
       }
-      return answer;
+
+      function createArray(arr1, arr2) {
+         let answer={};
+         for(i = 0; i < arr1.length; i++){
+         answer.arr1[i] = arr2[i];
+        }return answer
+      }
 
       const result1 = createArray(["Jett", "Ken"], [30, 40]);
       const result2 = createArray(["Math", "Science", "English"], [85, 90, 75]);
@@ -31,12 +38,21 @@
       }
       /*
       function createArray(arr1, arr2) {
-  let answer = {};
-  for(i = 0 ;i < arr1.length; i++){
-    arr1[i] = answer
-    arr2[i] = answer.arr1
-  }
-}*/
+          let answer = {};
+          for(i = 0 ;i < arr1.length; i++){
+            arr1[i] = answer
+            arr2[i] = answer.arr1
+           }
+      }*/
+/*
+function createArray(arr1, arr2) {
+        let answer = {};
+       for(i = 0; i < arr1.length; i++){
+       answer[arr1[i]] = arr2[i];
+        }
+  return answer;
+      }
+*/
     </script>
   </body>
 </html>
