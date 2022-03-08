@@ -1,13 +1,13 @@
 import "./App.css";
-import Info from "./components/info";
-import React, { useState } from "react";
+import React /*useState*/ from "react";
+import TodoList from "./components/TodoList";
 
 function App() {
-  const [isShow, setIsShow] = useState(false);
+  /*const [isShow, setIsShow] = useState(false);*/
 
   return (
     <>
-      <button
+      {/* <button
         onClick={() => {
           setIsShow(true);
         }}
@@ -21,7 +21,8 @@ function App() {
       >
         숨기기
       </button>
-      {isShow && <Info />}
+      {isShow && <TodoList />} */}
+      <TodoList>Todo App을 만들자!</TodoList>
     </>
   );
 }

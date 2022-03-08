@@ -24,6 +24,7 @@ const Sample = () => {
         {news.map((e) => (
           <li /*onDoubleClick={() => newsDelete()}*/>{e}</li>
         ))}
+        ;
       </ul>
     </>
   );
