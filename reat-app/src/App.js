@@ -1,6 +1,8 @@
 import "./App.css";
 import React /*useState*/ from "react";
+import News from "./components/news/News";
 import TodoList from "./components/TodoList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   /*const [isShow, setIsShow] = useState(false);*/
@@ -22,7 +24,15 @@ function App() {
         숨기기
       </button>
       {isShow && <TodoList />} */}
-      <TodoList>Todo App을 만들자!</TodoList>
+      {/* <TodoList>Todo App을 만들자!</TodoList> */}
+      {/* <Axios></Axios> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/todo" element={<TodoList />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:category" element={<News />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

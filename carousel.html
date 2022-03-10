@@ -1,111 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carousel</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Varela+Round&display=swap');
-body {
-  background-image: url("./images/bg.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: "Varela Round", sans-serif;
-}
-h1 {
-  font-family: "Pacifico", cursive;
-  text-align: center;
-  font-size: 72px;
-}
-.carousel-container {
-  position: relative;
-  width: 650px;
-  margin: 0 auto;
-  margin-bottom: 100px;
-}
-.image-box {
-  width: 453.17px;
-  height: 300px;
-  margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-}
-.image-box > img {
-  margin-right: 10px;
-  width: 453.17px;
-  /* transform: translateX(-463.17px); */
-}
-.carousel-container > i {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  cursor: pointer;
-}
-.carousel-container > .fa-arrow-left {
-  left: 0px;
-}
-.carousel-container > .fa-arrow-right {
-  right: 0px;
-}
-.dot-list {
-  position: absolute;
-  left: 50%;
-  bottom: -50px;
-  transform: translate(-50%);
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-.dot-item {
-  width: 13px;
-  height: 13px;
-  background-color: black;
-  border-radius: 50%;
-  list-style: none;
-  margin: 3px;
-  cursor: pointer;
-}
-  </style>
-</head>
-<body>
   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Varela+Round&display=swap");
+      body {
+        background-image: url("./images/bg.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: "Varela Round", sans-serif;
+      }
+      h1 {
+        font-family: "Pacifico", cursive;
+        text-align: center;
+        font-size: 72px;
+      }
+      .carousel-container {
+        position: relative;
+        width: 650px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+      }
+      .image-box {
+        width: 453.17px;
+        height: 300px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+      }
+      .image-box > img {
+        margin-right: 10px;
+        width: 453.17px;
+        /* transform: translateX(-463.17px); */
+      }
+      .carousel-container > i {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        cursor: pointer;
+      }
+      .carousel-container > .fa-arrow-left {
+        left: 0px;
+      }
+      .carousel-container > .fa-arrow-right {
+        right: 0px;
+      }
+      .dot-list {
+        position: absolute;
+        left: 50%;
+        bottom: -50px;
+        transform: translate(-50%);
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      .dot-item {
+        width: 13px;
+        height: 13px;
+        background-color: black;
+        border-radius: 50%;
+        list-style: none;
+        margin: 3px;
+        cursor: pointer;
+      }
+    </style>
   </head>
-  <section>
-    <h1>Carousel</h1>
-    <div class="carousel-container">
-      <i class="fas fa-arrow-left fa-3x"></i>
-      <div class="image-box">
-        <img src="https://i.pinimg.com/originals/95/0f/26/950f265301fed3bf025eaac0cd3e8490.jpg" />
-        <img src="https://t1.daumcdn.net/cfile/tistory/274D81405966F29A1D" />
-        <img src="https://photo.coolenjoy.net/data/editor/1908/Bimg_fbeae84af08bbd7de189375fbdf82983_lczc.png" />
-        <img src="https://upload3.inven.co.kr/upload/2020/04/29/bbs/i15523914217.png" />
-        <img src="https://blog.kakaocdn.net/dn/cKLyPD/btrcVjgL9M7/N0KfsqEVQipTSkuSmCsXz1/05-%EC%82%B0%EA%B3%BC%EB%85%B8%EC%9D%84-C-Blue%20Sky-%ED%95%98%EB%8A%98%EB%B0%B0%EA%B2%BD%ED%99%94%EB%A9%B4.png?attach=1&knm=img.png" />
+  <body>
+    <head>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </head>
+    <section>
+      <h1>Carousel</h1>
+      <div class="carousel-container">
+        <i class="fas fa-arrow-left fa-3x"></i>
+        <div class="image-box">
+          <img
+            src="https://i.pinimg.com/originals/95/0f/26/950f265301fed3bf025eaac0cd3e8490.jpg"
+          />
+          <img src="https://t1.daumcdn.net/cfile/tistory/274D81405966F29A1D" />
+          <img
+            src="https://photo.coolenjoy.net/data/editor/1908/Bimg_fbeae84af08bbd7de189375fbdf82983_lczc.png"
+          />
+          <img
+            src="https://upload3.inven.co.kr/upload/2020/04/29/bbs/i15523914217.png"
+          />
+          <img
+            src="https://blog.kakaocdn.net/dn/cKLyPD/btrcVjgL9M7/N0KfsqEVQipTSkuSmCsXz1/05-%EC%82%B0%EA%B3%BC%EB%85%B8%EC%9D%84-C-Blue%20Sky-%ED%95%98%EB%8A%98%EB%B0%B0%EA%B2%BD%ED%99%94%EB%A9%B4.png?attach=1&knm=img.png"
+          />
+        </div>
+        <i class="fas fa-arrow-right fa-3x"></i>
+        <ul class="dot-list">
+          <li class="dot-item"></li>
+          <li class="dot-item"></li>
+          <li class="dot-item"></li>
+          <li class="dot-item"></li>
+          <li class="dot-item"></li>
+        </ul>
       </div>
-      <i class="fas fa-arrow-right fa-3x"></i>
-      <ul class="dot-list">
-        <li class="dot-item"></li>
-        <li class="dot-item"></li>
-        <li class="dot-item"></li>
-        <li class="dot-item"></li>
-        <li class="dot-item"></li>
-      </ul>
-    </div>
-  </section>
-  <script>
-    let btnRight = document.querySelector(".fas fa-arrow-right fa-3x");
-    let btnLeft = document.querySelector(".fas fa-arrow-left fa-3x");
-    let imgAll = document.querySelectorAll(".image-box");
-    btnRight.addEventListener("click",function () {
-      for(i = 0; i < 5; i++){
-         imgAll[i].style.transform = "translateX(-463.17px)";
-      };
-    });
-    let dotItem = document.querySelectorAll(".dot-item");
-    dotItem.addEventListener("click",function () {
-      imgAll[0].style.transform = "translateX(-463.17px)";
-    });
-  </script>
-</body>
+    </section>
+    <script>
+      let btnRight = document.querySelector(".fa-arrow-right");
+      let btnLeft = document.querySelector(".fa-arrow-left");
+      let imgAll = document.querySelectorAll(".image-box img");
+      let j = 0;
+      btnRight.addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+          imgAll[i].style.transform = `translateX(${-463.17 * (j + 1)}px)`;
+        }
+      });
+      let dotItem = document.querySelectorAll(".dot-item");
+      dotItem.addEventListener("click", function () {
+        imgAll[0].style.transform = "translateX(-463.17px)";
+      });
+    </script>
+  </body>
 </html>

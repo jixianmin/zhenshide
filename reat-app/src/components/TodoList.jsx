@@ -24,6 +24,12 @@ const TodoList = () => {
   const handleEdit = (id) => {
     const newText = prompt("입력하세요");
     const newTodoList = todoList.map((todo) => {
+      if (todo.id === id) {
+        todo.text = newText;
+        return { id: todo.id, text: newText };
+        //return{...todo,text:newText };
+        //return todo.id === id ? {...todo,text: newText } : todo;
+      }
       return todo;
     });
     setTodoList(newTodoList);
@@ -50,7 +56,7 @@ const TodoList = () => {
               <Content>{text}</Content>
             </label>
             <BtnWrapper>
-              <BtnEdit>수정</BtnEdit>
+              <BtnEdit onClick={() => handleEdit(id)}>수정</BtnEdit>
               <BtnDelete onClick={() => handleDelete(id)}>삭제</BtnDelete>
             </BtnWrapper>
           </Item>
