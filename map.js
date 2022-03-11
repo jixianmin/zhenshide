@@ -4,7 +4,7 @@ const callback = (element, index) => {
 
 const forEach = (callback) => {
   for (let i = 0; i < arr.length; i++) {
-    callback(arr[i], i);
+    callback(arr[i], i); //i=0 callback(1,0) callback = 2
   }
 };
 const map = (callback) => {
@@ -12,7 +12,7 @@ const map = (callback) => {
   for (let i = 0; i < arr.length; i++) {
     result.push(callback(arr[i], i));
   }
-  return result;
+  return result; //result = [2,3,4]
 };
 const filter = (callback) => {
   const result = [];
@@ -21,10 +21,14 @@ const filter = (callback) => {
       result.push(arr[i]);
     }
   }
-  return result;
+  return result; //result = [2,3,4]
 };
 
 const arr = [1, 2, 3];
 const newArr = arr.map((element, index) => {
   return element + 1;
-});
+}); //return [2,3,4]
+
+const newArr2 = arr.filter((e, i) => {
+  return e > 1;
+}); //return [2,3]

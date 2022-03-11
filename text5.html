@@ -7,8 +7,35 @@
     <title>Document</title>
   </head>
   <body>
-    <script type="text/jacascript" src="./map.js">
-      callback()
+    <script>
+      let s = "try hello world";
+      //return "TrY HeLlo WoRlD"
+      function solution(s) {
+        let answer = "";
+        if (s[i] !== " ") {
+          for (i = 0; i < s.length; i++) {
+            if (i % 2 === 0) {
+              answer += s[i].toUpperCase();
+            } else {
+              answer += s[i].toLowerCase();
+            }
+          }
+        }
+        console.log(answer);
+        return answer;
+      }
+      solution(s); //프로그래머스 코테 이상한 문자 만들기!
+      // function solution(s) {
+      //   let answer = "";
+      //   for (let i = 0; i < s.length; i++) {
+      //     if (i % 2 === 0) {
+      //       answer += s[i].toUpperCase();
+      //     } else {
+      //       answer += s[i].toLowerCase();
+      //     }
+      //   }
+      //   console.log(answer);
+      //   return answer;
     </script>
   </body>
 </html>

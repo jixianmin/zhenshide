@@ -1,7 +1,8 @@
-import "./App.css";
+// import "./App.css";
 import React /*useState*/ from "react";
 import News from "./components/news/News";
 import TodoList from "./components/TodoList";
+import Bootstrap from "./components/Bootstrap/Bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/todo" element={<TodoList />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:category" element={<News />} />
+          <Route path="/bootstrap" element={<Bootstrap />} />
         </Routes>
       </BrowserRouter>
     </>
