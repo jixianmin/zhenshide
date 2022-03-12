@@ -11,31 +11,37 @@
       let s = "try hello world";
       //return "TrY HeLlo WoRlD"
       function solution(s) {
-        let answer = "";
-        if (s[i] !== " ") {
-          for (i = 0; i < s.length; i++) {
-            if (i % 2 === 0) {
-              answer += s[i].toUpperCase();
+    let answer = '';
+    let K = s.split(" ");
+          for (let i = 0; i < K.length; i++) {
+             let T = K[i];
+             let P = T.join('');
+              console.log(P)
+            for(let j = 0; j < P[j].length; j++){
+            if (j % 2 === 0) {
+              answer += P[j].toUpperCase();
             } else {
-              answer += s[i].toLowerCase();
+              answer += P[j].toLowerCase();
             }
+                answer += " "
+            };
           }
-        }
-        console.log(answer);
-        return answer;
-      }
-      solution(s); //프로그래머스 코테 이상한 문자 만들기!
-      // function solution(s) {
+    return answer;
+}
+
+       //프로그래머스 코테 이상한 문자 만들기!
+      //  function solution(s) {
       //   let answer = "";
-      //   for (let i = 0; i < s.length; i++) {
-      //     if (i % 2 === 0) {
-      //       answer += s[i].toUpperCase();
-      //     } else {
-      //       answer += s[i].toLowerCase();
+      //     for (i = 0; i < s.length; i++) {
+      //       if (i % 2 === 0) {
+      //         answer += s[i].toUpperCase();
+      //       } else {
+      //         answer += s[i].toLowerCase();
+      //       }
       //     }
-      //   }
       //   console.log(answer);
       //   return answer;
+      // }
     </script>
   </body>
 </html>
