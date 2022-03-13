@@ -33,12 +33,16 @@
     });
 
     function BaseBallNumber() {
-    let result = ""
+    let numberList = ""
+    const getRandomNumber = () => Math.floor(Math.random() * 10);
     for (let i = 0; i < 3; i += 1) {
-    const randomIndex = Math.floor(Math.random() * 10);
-    result += randomIndex;
+      let randomNumber = getRandomNumber();
+      while (numberList.includes(randomNumber)) {
+      randomNumber = getRandomNumber();
+      }
+      numberList += randomNumber;
     }
-  return result;
+  return numberList;
   }
   //숫자입력
   let S = 0
@@ -65,7 +69,7 @@
             }else {console.log("노답");console.log(BaseBallNumber());console.log(userNumber)}
           }; 
     document.querySelector("input").value = '';
-    } else {alert("숫자 4자리를 입력하시오.");
+    } else {alert("숫자 3자리를 입력하시오.");
     document.querySelector("input").value = ''}
       }
   )
