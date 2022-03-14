@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #3474FF;
-}
-p {
-  font-size: 50px;
-}
-button {
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 6px;
-}
-  </style>
-</head>
-<body>
-  <div class="wrapper">
-    <p>HEX CODE: #3474FF</p>
-    <button>Change Color</button>
-  </div>
-  <script>
-    const btn = document.querySelector("button")
-    let Wrapper = document.querySelector(".wrapper")
-  function hexGenerator() {
-    const hexNumbers = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
-    let result = "#";
-    for (var i = 0; i < 6; i += 1) {
-    const randomIndex = Math.floor(Math.random() * hexNumbers.length);
-    result += hexNumbers[randomIndex];
-    }
-  return result;
-  }
-    btn.addEventListener("click",function () {
-      Wrapper.style.backgroundColor = hexGenerator();
-      let newP = document.querySelector("p");
-      newP.innerText = `HEX CODE: ${hexGenerator()}`;
-    });
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: #3474ff;
+      }
+      p {
+        font-size: 50px;
+      }
+      button {
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <p>HEX CODE: #3474FF</p>
+      <button>Change Color</button>
+    </div>
+    <script>
+      const btn = document.querySelector("button");
+      let Wrapper = document.querySelector(".wrapper");
+      function hexGenerator() {
+        const hexNumbers = [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+        ];
+        let result = "#";
+        for (var i = 0; i < 6; i += 1) {
+          const randomIndex = Math.floor(Math.random() * hexNumbers.length);
+          result += hexNumbers[randomIndex];
+        }
+        return result;
+      }
 
-  
-  </script>
-</body>
+      btn.addEventListener("click", function () {
+        let gogo = hexGenerator();
+        Wrapper.style.backgroundColor = gogo;
+        let newP = document.querySelector("p");
+        newP.innerText = `HEX CODE: ${gogo}`;
+      });
+    </script>
+  </body>
 </html>
