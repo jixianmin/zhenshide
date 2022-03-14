@@ -1,81 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>숫자 야구게임!</title>
-</head>
-<body>
-  <h1>숫자 야구게임</h1>
-  <p>간단하게 내기삼아 할 수 있는 게임이며 연필 및 종이 게임이다.</p>
-  <p>각자 4자리의 숫자를 임의로 정한 뒤,서로에게 4자리의 숫자를 불러서 결과를 확인한다.그리고 그 결과를 토대로 상대가 적은 숫자를 예상한 뒤 맞힌다</p>
-  <ul>
-    <li>사용되는 숫자는 0에서 9까지 서로 다른 숫자이다. 경우에 따라 0은 사용하지 않기도 한다.</li>
-    <li>숫자는 맞지만 위치가 틀렸을 때는 볼.</li>
-    <li>숫자와 위치가 전부 맞으면 스트라이크.</li>
-    <li>숫자와 위치가 전부 틀리면 아웃. "틀렸다"는 게 중요하다. 의외로 아웃이 제일 좋은 수인데, 틀린 숫자만 제끼고 남은 숫자끼리 조합하면 되므로 경우의 수가 팍팍 줄어들기 때문. 볼, 스트라이크는 숫자는 맞는 게 있으나 무슨 숫자가 맞았는지를 알 수가 없어 경우의 수를 더 생각해봐야 하지만 아웃은 틀린 숫자만 제거한 나머지만 생각해보면 어렵지 않기 때문. 2아웃이 나오면 더욱 좋다. 작정하고 숫자 예측을 이상하게 하지 않는 이상 3아웃 이상은 절대로 나오지 않는다.</li>
-    <li>물론 무엇이 볼이고 스트라이크인지는 알려주지 않는다.</li>
-    <li>두 숫자가 중복되면 경우의 수가 많아져서 그런지 중복 숫자는 잘 사용하지 않는다.</li>
-  </ul>
-  <a href="https://book.vanillacoding.co/starter-kit/step-5/final-projects/baseball">스타터키트 페이지</a>
-  <br>
-  <button class="start">게임시작</button>
-  <h2></h2>
-  <input type="number"><button class="user">숫자 입력</button>
-  <ul class='result'></ul>
-  <script>
-    const btn = document.querySelector(".start")
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자 야구게임!</title>
+  </head>
+  <body>
+    <h1>숫자 야구게임</h1>
+    <p>간단하게 내기삼아 할 수 있는 게임이며 연필 및 종이 게임이다.</p>
+    <p>
+      각자 4자리의 숫자를 임의로 정한 뒤,서로에게 4자리의 숫자를 불러서 결과를
+      확인한다.그리고 그 결과를 토대로 상대가 적은 숫자를 예상한 뒤 맞힌다
+    </p>
+    <ul>
+      <li>
+        사용되는 숫자는 0에서 9까지 서로 다른 숫자이다. 경우에 따라 0은 사용하지
+        않기도 한다.
+      </li>
+      <li>숫자는 맞지만 위치가 틀렸을 때는 볼.</li>
+      <li>숫자와 위치가 전부 맞으면 스트라이크.</li>
+      <li>
+        숫자와 위치가 전부 틀리면 아웃. "틀렸다"는 게 중요하다. 의외로 아웃이
+        제일 좋은 수인데, 틀린 숫자만 제끼고 남은 숫자끼리 조합하면 되므로
+        경우의 수가 팍팍 줄어들기 때문. 볼, 스트라이크는 숫자는 맞는 게 있으나
+        무슨 숫자가 맞았는지를 알 수가 없어 경우의 수를 더 생각해봐야 하지만
+        아웃은 틀린 숫자만 제거한 나머지만 생각해보면 어렵지 않기 때문. 2아웃이
+        나오면 더욱 좋다. 작정하고 숫자 예측을 이상하게 하지 않는 이상 3아웃
+        이상은 절대로 나오지 않는다.
+      </li>
+      <li>물론 무엇이 볼이고 스트라이크인지는 알려주지 않는다.</li>
+      <li>
+        두 숫자가 중복되면 경우의 수가 많아져서 그런지 중복 숫자는 잘 사용하지
+        않는다.
+      </li>
+    </ul>
+    <a
+      href="https://book.vanillacoding.co/starter-kit/step-5/final-projects/baseball"
+      >스타터키트 페이지</a
+    >
+    <br />
+    <button class="start">게임시작</button>
+    <h2></h2>
+    <input type="number" /><button class="user">숫자 입력</button>
+    <ul class="result"></ul>
+    <script>
+      const btn = document.querySelector(".start");
+      let $baseBallNumber;
+      btn.addEventListener("click", function () {
+        $baseBallNumber = BaseBallNumber();
+        let newH2 = document.querySelector("h2");
+        newH2.innerText = `BaseBallNumber: ${$baseBallNumber}`;
+        return $baseBallNumber;
+      });
 
-    btn.addEventListener("click",function () {
-      let newH2 = document.querySelector("h2");
-      newH2.innerText = `BaseBallNumber: ${BaseBallNumber()}`;
-    });
+      const BaseBallNumber = () => {
+        let numberList = "";
+        const getRandomNumber = () => Math.floor(Math.random() * 10);
+        for (let i = 0; i < 3; i += 1) {
+          let randomNumber = getRandomNumber();
+          while (numberList.includes(randomNumber)) {
+            randomNumber = getRandomNumber();
+          }
+          numberList += randomNumber;
+        }
+        console.log(numberList);
+        return numberList;
+      };
+      //숫자입력
+      let S = 0;
+      let B = 0;
+      const userBtn = document.querySelector(".user");
+      userBtn.addEventListener("click", function () {
+        const userNumber = document.querySelector("input").value;
+        let userSelect = document.querySelector(".result");
 
-    const BaseBallNumber = () => {
-    let numberList = ""
-    const getRandomNumber = () => Math.floor(Math.random() * 10);
-    for (let i = 0; i < 3; i += 1) {
-      let randomNumber = getRandomNumber();
-      while (numberList.includes(randomNumber)) {
-      randomNumber = getRandomNumber();
-      }
-      numberList += randomNumber;
-    }
-    console.log(numberList);
-    return numberList;
-  }
-  //숫자입력
-  let S = 0
-  let B = 0
-  const userBtn = document.querySelector(".user")
-  userBtn.addEventListener("click",function () {
-    const userNumber = document.querySelector("input").value;
-    let userSelect = document.querySelector(".result")
-
-    if(userNumber.length === BaseBallNumber().length){
-      let newItem = document.createElement("li")
-      let newText = document.createTextNode(userNumber)//뉴텍스트는 객체
-      newItem.appendChild(newText);
-      userSelect.appendChild(newItem);
-      //console.log(typeof userNumber) ;유저넘버는 스트링
-      // userSelect.innerText = userNumber;베이스볼넘버를 배열 하나하나 비교
-       for(let a = 0; a < BaseBallNumber().length; a++){
-            if(BaseBallNumber()[a] === userNumber[a]) {
-               S += 1;
-               let newItem = document.createElement("li")
-               let newText = document.createTextNode(S)
-               newItem.appendChild(newText);
-               userSelect.appendChild(newItem);
-            }else {console.log("노답");console.log(BaseBallNumber());console.log(userNumber)}
-          }; 
-    document.querySelector("input").value = '';
-    } else {alert("숫자 3자리를 입력하시오.");
-    document.querySelector("input").value = ''}
-      }
-  )
-  let name="kilhyeonmin";
-  console.log(name[3]);
-  </script>
-</body>
+        if (userNumber.length === $baseBallNumber.length) {
+          let newItem = document.createElement("li");
+          let newText = document.createTextNode(userNumber); //뉴텍스트는 객체
+          newItem.appendChild(newText);
+          userSelect.appendChild(newItem);
+          //console.log(typeof userNumber) ;유저넘버는 스트링
+          // userSelect.innerText = userNumber;베이스볼넘버를 배열 하나하나 비교
+          for (let a = 0; a < $baseBallNumber.length; a++) {
+            if ($baseBallNumber[a] === userNumber[a]) {
+              S += 1;
+              let newItem = document.createElement("li");
+              let newText = document.createTextNode(S);
+              newItem.appendChild(newText);
+              userSelect.appendChild(newItem);
+            } else {
+              console.log("노답");
+              console.log($baseBallNumber);
+              console.log(userNumber);
+            }
+          }
+          document.querySelector("input").value = "";
+        } else {
+          alert("숫자 3자리를 입력하시오.");
+          document.querySelector("input").value = "";
+        }
+      });
+      let name = "kilhyeonmin";
+      console.log(name[3]);
+    </script>
+  </body>
 </html>
