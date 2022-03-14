@@ -91,7 +91,7 @@
             src="https://photo.coolenjoy.net/data/editor/1908/Bimg_fbeae84af08bbd7de189375fbdf82983_lczc.png"
           />
           <img
-            src="https://upload3.inven.co.kr/upload/2020/04/29/bbs/i15523914217.png"
+            src="https://kbdevstorage1.blob.core.windows.net/asset-blobs/19050_en_1"
           />
           <img
             src="https://blog.kakaocdn.net/dn/cKLyPD/btrcVjgL9M7/N0KfsqEVQipTSkuSmCsXz1/05-%EC%82%B0%EA%B3%BC%EB%85%B8%EC%9D%84-C-Blue%20Sky-%ED%95%98%EB%8A%98%EB%B0%B0%EA%B2%BD%ED%99%94%EB%A9%B4.png?attach=1&knm=img.png"
@@ -113,14 +113,89 @@
       let imgAll = document.querySelectorAll(".image-box img");
       let j = 0;
       btnRight.addEventListener("click", function () {
-        for (i = 0; i < 5; i++) {
-          imgAll[i].style.transform = `translateX(${-463.17 * (j + 1)}px)`;
+        j += 1
+        if(j < 5){
+          for (i = 0; i < 5; i++) {
+            imgAll[i].style.transform = `translateX(${-463.17 * (j)}px)`;
+          }
+        }else {
+          j = 0;
+          for (i = 0; i < 5; i++) {
+          imgAll[i].style.transform = `translateX(${-463.17 * (j)}px)`
+          };
         }
       });
-      let dotItem = document.querySelectorAll(".dot-item");
-      dotItem.addEventListener("click", function () {
-        imgAll[0].style.transform = "translateX(-463.17px)";
+      btnLeft.addEventListener("click", function () {
+        j -= 1
+        if(j > -1){
+          for (i = 0; i < 5; i++) {
+            imgAll[i].style.transform = `translateX(${-463.17 * (j)}px)`;
+          }
+        }else {
+          j = 4;
+          for (i = 0; i < 5; i++) {
+          imgAll[i].style.transform = `translateX(${-463.17 * (j)}px)`
+          };
+        }
       });
+      let dotList = document.querySelectorAll(".dot-item");
+      for(let K = 0; K < 5; K++){
+        dotList[K].addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+          j=K
+            imgAll[i].style.transform = `translateX(${-463.17* (j)}px)`;
+          }
+      });}
+      
+
+      /*for (i = 0; i < 5; i++) {
+          imgAll[i].style.transform = `translateX(${-463.17 * (j + 1)}px)`;
+        }
+      });*/
+      /* let dotList = document.querySelectorAll(".dot-item");
+      dotList[0].addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+            imgAll[i].style.transform = `translateX(${-463.17}px)`;
+          }
+      });*/
+      /* dotList 인덱스 반복문 제작?
+      let dotList = document.querySelectorAll(".dot-item");
+      dotList[0].addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+          j=0
+            imgAll[i].style.transform = `translateX(${-463.17* (0)}px)`;
+          }
+      });
+      dotList[1].addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+          j=1
+            imgAll[i].style.transform = `translateX(${-463.17* (1)}px)`;
+          }
+      });
+      dotList[2].addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+          j=2
+            imgAll[i].style.transform = `translateX(${-463.17* (2)}px)`;
+          }
+      });
+      dotList[3].addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+          j=3
+            imgAll[i].style.transform = `translateX(${-463.17* (3)}px)`;
+          }
+      });
+      dotList[4].addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+          j=4
+            imgAll[i].style.transform = `translateX(${-463.17* (4)}px)`;
+          }
+      });
+      dotList[5].addEventListener("click", function () {
+        for (i = 0; i < 5; i++) {
+          j=5
+            imgAll[i].style.transform = `translateX(${-463.17* (5)}px)`;
+          }
+      });*/
     </script>
   </body>
 </html>
