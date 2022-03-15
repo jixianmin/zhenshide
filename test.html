@@ -8,18 +8,21 @@
   </head>
   <body>
     <script>
-      function createArray(arr1, arr2) {
-        answer = {};
-        answer.arr1 = arr2;
-        console.log(answer);
+      function add(num) {
+        return function (b) {
+          if (b) {
+            return add(num + b);
+          }
+          return num;
+        };
       }
+      console.log(add(1)(2)(3));
 
-      const result1 = createArray(["Jett", "Ken"], [30, 40]);
-      const result2 = createArray(["Math", "Science", "English"], [85, 90, 75]);
-      const result3 = createArray(
-        ["Pizza", "Salad", "Pasta", "Steak"],
-        [3, 4, 2, 1]
-      );
+      const six = add(1)(2)(3);
+      const ten = add(2)(3)(5);
+
+      console.log(six); // 6
+      console.log(ten); // 10
     </script>
   </body>
 </html>
