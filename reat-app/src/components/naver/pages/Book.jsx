@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import MovieList from "../organisms/MovieList";
+import BookList from "../organisms/BookList";
 import axios from "axios";
 import { getBookList } from "../../../apjs/naver";
 
@@ -25,19 +25,17 @@ const Book = () => {
         />
         <BtnSubmit>검색</BtnSubmit>
       </Form>
-      <MovieList data={bookList} />
+      <BookList data={bookList} />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: #b464eb;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 `;
 const PageTitle = styled.h1`
   margin: 0;

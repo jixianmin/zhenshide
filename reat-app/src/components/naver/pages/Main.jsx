@@ -24,12 +24,10 @@ const Img = styled.img`
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: #b464eb;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 `;
 const PageTitle = styled.h1`
   margin: 0;
