@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import MovieList from "../organisms/MovieList";
-import axios from "axios";
 import { getMovieList } from "../../../apjs/naver";
-import { countryList, genreList, total } from "../../datas/naver";
+import { countryList, genreList } from "../../datas/naver";
 import Pagination from "../organisms/Pagination";
 
 const Movie = () => {
@@ -12,7 +11,8 @@ const Movie = () => {
   const [country, setCountry] = useState("All");
   const [movieList, setMovieList] = useState([]);
   const [genre, setGenre] = useState("All");
-  const [total, setTotal] = useState("total");
+  const [total, setTotal] = useState(0);
+  const [query, setQuery] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
