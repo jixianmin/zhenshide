@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 const BookList = ({ data }) => {
+  const handleError = (e) => {
+    e.target.src =
+      "https://littledeep.com/wp-content/uploads/2021/05/book_illustration_png_v3-1024x853.png";
+  };
+
   return (
     <List>
       {data.map(({ isbn, image, title }) => (

@@ -2,19 +2,14 @@ import styled from "styled-components";
 
 const Pagination = ({ onPageChange, total, nowPage }) => {
   const lastPage = Math.ceil(total / 10);
-  const pageList = [];
-
-  for (let i = 1; i <= lastPage; i++) {
-    pageList.push(i);
-  }
-
   const startPage = Math.ceil(nowPage / 10) * 10 - 9;
   const endPage = startPage + 9 > lastPage ? lastPage : startPage + 9;
   const pageList = [];
 
+  for (let i = startPage; i <= endPage; i++) {
+    pageList.push(i);
+  }
 
-  for
-  
   return (
     <List>
       {nowPage > 1 && (
