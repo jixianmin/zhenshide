@@ -25,6 +25,22 @@
       const txtNode = document.createTextNode("I am a paragraph");
       newP.appendChild(txtNode);
       bodyElement.appendChild(newP);
+      
+      function 기계(){
+        this.q = 'strike';
+        this.w = 'snowball';
+      }
+
+      기계.prototype.name = 'kim'
+
+      var nunu = new 기계()
+
+
+      var add = function(x) {
+                    return function(y) { return x + y; };
+                }
+                var a = add(2)(3);
+      console.log(a)
     </script>
   </body>
 </html>
