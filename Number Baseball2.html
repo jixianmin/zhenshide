@@ -41,12 +41,13 @@
     >
     <br />
     <button class="start">게임시작</button>
+    <button class="return">게임재시작</button>
     <h2></h2>
     <input type="number" /><button class="user">숫자 입력</button>
     <ul class="result"></ul>
     <script>
       const btn = document.querySelector(".start");
-      let $baseBallNumber;
+      let $baseBallNumber;//이거 선언을 먼저 해야지 문제가 안생긴다
       btn.addEventListener("click", function () {
         $baseBallNumber = BaseBallNumber();
         let newH2 = document.querySelector("h2");
@@ -64,18 +65,18 @@
           }
           numberList += randomNumber;
         }
-        console.log(numberList);
         return numberList;
       };
       //숫자입력
       let S = 0;
       let B = 0;
+      let Chance = 0;
       const userBtn = document.querySelector(".user");
       userBtn.addEventListener("click", function () {
         const userNumber = document.querySelector("input").value;
         let userSelect = document.querySelector(".result");
 
-        if (userNumber.length === $baseBallNumber.length) {
+        if (userNumber.length === $baseBallNumber.length && Chance < 10) {
           let newItem = document.createElement("li");
           let newText = document.createTextNode(userNumber); //뉴텍스트는 객체
           newItem.appendChild(newText);
@@ -86,20 +87,37 @@
             if ($baseBallNumber[a] === userNumber[a]) {
               S += 1;
               let newItem = document.createElement("li");
-              let newText = document.createTextNode(S);
+              let newText = document.createTextNode(`스트라이크: ${S}`);
               newItem.appendChild(newText);
               userSelect.appendChild(newItem);
-            } else {
-              console.log("노답");
-              console.log($baseBallNumber);
-              console.log(userNumber);
+            }
+          }//여기까지 스트라이크
+          for (let b = 0; b < $baseBallNumber.length; b++) {
+            for(let c = 0;c < userNumber.length; c++){
+              if ($baseBallNumber[b] === userNumber[c]){
+                B += 1;
+                let newItem = document.createElement("li");
+              let newText = document.createTextNode(`볼: ${B}`);
+              newItem.appendChild(newText);
+              userSelect.appendChild(newItem);
+              }
             }
           }
+          //이건 볼
+
+          Chance += 1
+          console.log(Chance)
+
           document.querySelector("input").value = "";
-        } else {
+        } else if (Chance >= 10) {
+          alert("10번을 다하셨습니다.");
+        }
+          else {
           alert("숫자 3자리를 입력하시오.");
           document.querySelector("input").value = "";
         }
+        B =0
+          S=0
       });
       let name = "kilhyeonmin";
       console.log(name[3]);
