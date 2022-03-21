@@ -47,7 +47,7 @@
     <ul class="result"></ul>
     <script>
       const btn = document.querySelector(".start");
-      let $baseBallNumber;//이거 선언을 먼저 해야지 문제가 안생긴다
+      let $baseBallNumber; //이거 선언을 먼저 해야지 문제가 안생긴다
       btn.addEventListener("click", function () {
         $baseBallNumber = BaseBallNumber();
         let newH2 = document.querySelector("h2");
@@ -86,39 +86,56 @@
           for (let a = 0; a < $baseBallNumber.length; a++) {
             if ($baseBallNumber[a] === userNumber[a]) {
               S += 1;
-              let newItem = document.createElement("li");
-              let newText = document.createTextNode(`스트라이크: ${S}`);
-              newItem.appendChild(newText);
-              userSelect.appendChild(newItem);
             }
-          }//여기까지 스트라이크
+          }
+          if (S > 0) {
+            let newItem = document.createElement("li");
+            let newText = document.createTextNode(`스트라이크: ${S}`);
+            newItem.appendChild(newText);
+            userSelect.appendChild(newItem);
+          }
+
+          //여기까지 스트라이크
           for (let b = 0; b < $baseBallNumber.length; b++) {
-            for(let c = 0;c < userNumber.length; c++){
-              if ($baseBallNumber[b] === userNumber[c]){
+            for (let c = 0; c < userNumber.length; c++) {
+              if ($baseBallNumber[b] === userNumber[c]) {
                 B += 1;
-                let newItem = document.createElement("li");
-              let newText = document.createTextNode(`볼: ${B}`);
-              newItem.appendChild(newText);
-              userSelect.appendChild(newItem);
               }
             }
           }
+          if (B > 0) {
+            let newItem = document.createElement("li");
+            let newText = document.createTextNode(`볼: ${B}`);
+            newItem.appendChild(newText);
+            userSelect.appendChild(newItem);
+          }
+          if (B === 0) {
+            let newItem = document.createElement("li");
+            let newText = document.createTextNode(`아웃`);
+            newItem.appendChild(newText);
+            userSelect.appendChild(newItem);
+          }
           //이건 볼
 
-          Chance += 1
-          console.log(Chance)
+          Chance += 1;
+          console.log(Chance);
 
           document.querySelector("input").value = "";
         } else if (Chance >= 10) {
           alert("10번을 다하셨습니다.");
-        }
-          else {
+        } else {
           alert("숫자 3자리를 입력하시오.");
           document.querySelector("input").value = "";
         }
-        B =0
-          S=0
+        B = 0;
+        S = 0;
       });
+      //여기가 끝 재시작버튼 제작
+      const Return = document.querySelector(".return");
+      Return.addEventListener("click", function () {
+        location.reload();
+      });
+
       let name = "kilhyeonmin";
       console.log(name[3]);
     </script>
