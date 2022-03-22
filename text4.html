@@ -9,21 +9,19 @@
   <body>
     <script>
       function solution(arr1, arr2) {
-        for (i = 0; i < 2; i++) {
-          let answer = [];
+        let answer = [];
+        let notAnswer = [];
+        for (i = 0; i < arr1.length; i++) {
           let First = arr1[i];
           let Second = arr2[i];
           for (j = 0; j < First.length; j++) {
-            let notAnswer = [];
             let FirstAnswer = First[j] + Second[j];
-            notAnswer.push(FirstAnswer);
-            return notAnswer;
+            notAnswer[j] = FirstAnswer;
           }
           answer.push(notAnswer);
         }
+        console.log(answer);
         return answer;
-        console.log("answer");
-
         // var answer = [[]]; 행렬의 덧셈:중첩 for문,2차원 배열 ([[1,2],[2,3]])
         // return answer; const arr = [1,2,3,4] arr[i]
       }

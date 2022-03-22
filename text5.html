@@ -11,25 +11,31 @@
       let s = "try hello world";
       //return "TrY HeLlo WoRlD"
       function solution(s) {
-    let answer = '';
-    let K = s.split(" ");
-          for (let i = 0; i < K.length; i++) {
-             let T = K[i];
-             let P = T.join('');
-              console.log(P)
-            for(let j = 0; j < P[j].length; j++){
+        let answer = "";
+        let K = s.split(" ");
+        for (let i = 0; i < K.length; i++) {
+          let T = K[i];
+          for (let j = 0; j < T.length; j++) {
             if (j % 2 === 0) {
-              answer += P[j].toUpperCase();
+              answer += T[j].toUpperCase();
             } else {
-              answer += P[j].toLowerCase();
+              answer += T[j].toLowerCase();
             }
-                answer += " "
-            };
           }
-    return answer;
-}
+          if (i < K.length - 1) {
+            answer += " ";
+          }
+        }
+        console.log(answer);
+        console.log(typeof answer);
+        return answer;
+      }
+      solution(s);
 
-       //프로그래머스 코테 이상한 문자 만들기!
+      // let P = T.join(" ");
+      // console.log(P);
+      //split() 문자열을 배열로,join() 원소들을 하나값으로 연결
+      //프로그래머스 코테 이상한 문자 만들기!
       //  function solution(s) {
       //   let answer = "";
       //     for (i = 0; i < s.length; i++) {
