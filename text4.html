@@ -10,13 +10,14 @@
     <script>
       function solution(arr1, arr2) {
         let answer = [];
-        let notAnswer = [];
+        //let notAnswer = []; 여기에서 선언해서 재할당된다?답이 [[7,9],[7,9]]이 나오더라
         for (i = 0; i < arr1.length; i++) {
-          let First = arr1[i];
-          let Second = arr2[i];
-          for (j = 0; j < First.length; j++) {
-            let FirstAnswer = First[j] + Second[j];
-            notAnswer[j] = FirstAnswer;
+          let first = arr1[i];
+          let second = arr2[i];
+          let notAnswer = [];
+          for (j = 0; j < first.length; j++) {
+            let firstAnswer = first[j] + second[j];
+            notAnswer[j] = firstAnswer;
           }
           answer.push(notAnswer);
         }
@@ -35,6 +36,29 @@
         [5, 6],
       ];
       solution(arr1, arr2);
+      /*
+      (2) [Array(2), Array(2)]
+const notAnswer = []
+undefined
+const answer = []
+undefined
+notAnswer[0]=4
+4
+notAnswer[1]=6
+6
+answer.push(notAnswer)
+1
+answer
+[Array(2)]0: (2) [4, 6]length: 1[[Prototype]]: Array(0)
+notAnswer[0] = 7
+7
+notAnswer[1] = 9
+9
+answer.push(notAnswer)
+2
+answer
+(2) [Array(2), Array(2)]0: (2) [7, 9]1: (2) [7, 9]length: 2[[Prototype]]: Array(0)
+      */
     </script>
   </body>
 </html>
