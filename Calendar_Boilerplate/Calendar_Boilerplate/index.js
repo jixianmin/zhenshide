@@ -14,7 +14,7 @@ var d = new Date();
 var week = new Array('일','월','화','수','목','금','토');
 var month = new Array('January','Fevruary','March',"April","May","June","July","August","September","October","November","December")
 // document.write('오늘 요일: ' + week[d.getDay()] + '요일' + '<br/>');
-document.querySelector(".day").innerText = `${week[d.getDay()]}요일`
+document.querySelector(".day").innerText = `${week[d.getDay() + 3]}요일`
 document.querySelector(".date").innerText = `${d.getDate()}`
 document.querySelector(".yearMonth").innerText = `${month[d.getMonth()]} ${d.getFullYear()}`
 
