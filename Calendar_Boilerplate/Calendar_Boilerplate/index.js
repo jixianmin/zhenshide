@@ -1,3 +1,5 @@
+"use strict"
+//x = 3.14;선언안하고 쓰면 콘솔에 오류뜸
 console.log("hello, vanilla.");
 console.log("https://vanilla-coding-calendar.netlify.app/");
 /*오늘의 현재 요일 표기 완
@@ -30,3 +32,4 @@ function checkLeapYear(year) { //개발의품격
     return false;
   }
 }
+
