@@ -8,39 +8,23 @@
   </head>
   <body>
     <script>
-      const something = document.createElement("p");
-
-      for (let i = 0; i < 5; i++) {
-        something.textContent = i;
-        document.body.appendChild(something);
-      }
-
-      for (let i = 0; i < 5; i++) {
-        const something = document.createElement("p");
-        something.textContent = i;
-        document.body.appendChild(something);
-      }
-      const bodyElement = document.querySelector("body");
-      const newP = document.createElement("p");
-      const txtNode = document.createTextNode("I am a paragraph");
-      newP.appendChild(txtNode);
-      bodyElement.appendChild(newP);
+      const isEven = function (num) {
+        return num % 2 === 0;
+      };
+        //expect(evens).to.eql([2, 4, 6]);
       
-      function 기계(){
-        this.q = 'strike';
-        this.w = 'snowball';
-      }
+      let filter = function (collection, test) {
+        let arr = []
+        for(let i = 0; i < collection.length; i++){
+        if(test(collection[i])){
+        arr.push(collection[i])
+        }
+        }
+        return arr
+      };
+      const evens = filter([1, 2, 3, 4, 5, 6], isEven);
 
-      기계.prototype.name = 'kim'
-
-      var nunu = new 기계()
-
-
-      var add = function(x) {
-                    return function(y) { return x + y; };
-                }
-                var a = add(2)(3);
-      console.log(a)
+      console.log(evens);
     </script>
   </body>
 </html>
