@@ -141,11 +141,13 @@
 const setFixDayCount = number => {
   //캘린더 하루마다 아이디를 만들어주기 위해 사용
   let fixNum = "";
+
   if (number < 10) {
     fixNum = "0" + number;
   } else {
     fixNum = number;
   }
+  
   return fixNum;
 };
 
@@ -154,7 +156,6 @@ if (today.getMonth() + 1 < 10) {
 } else {
   setCalendarData(today.getFullYear(), "" + (today.getMonth() + 1));
 }
-
     </script>
   </body>
 </html>
