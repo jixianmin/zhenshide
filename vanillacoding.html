@@ -8,7 +8,23 @@
 </head>
 <body>
   <script>
-    
+    debugger
+    function solution(fn) {
+  fn(x) {
+    return function(y) {
+      if (typeof y !== 'undefined') {
+        x = x + y;
+        return arguments.callee;
+      } else {
+        return x;
+      }
+    };
+  }();
+  return fn
+}
+
+
+
   </script>
 </body>
 </html>
