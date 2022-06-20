@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item {
+        }
+        .item:nth-child(1) {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+
+        .item:nth-child(2) {
+            background-color: green;
+        }
+
+        .item:nth-child(3) {
+            background-color: blue;
+            width: 120px;
+            height: 120px;
+        }
+
+        .inner:nth-child(1) {
+            background-color: aqua;
+        }
+        
+        .inner:nth-child(2) {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item">1</div>
+        <div class="item">
+            <div class="inner">Title</div> 
+            <div class="inner">Description
+                DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
