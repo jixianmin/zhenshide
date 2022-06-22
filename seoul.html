@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sliceCityFromAddress(address) {
+  const checkDo = address.indexOf("도");
+  const checkSi = address.indexOf("시");
+  if (checkDo !== -1) {
+    address.slice(3,6);
+    return address
+  } else {
+    address.slice(0,checkSi+1);
+    return address
+  }
+}
+
+const add = '경기도 성남시 분당구';
+const add2 = '서울특별시 강남구';
+
+console.log(sliceCityFromAddress(add));
+    </script>
+</body>
+</html>
