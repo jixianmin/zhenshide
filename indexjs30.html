@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj2 = {
+  '생활속의회계': 'C',
+  '논리적글쓰기': 'B',
+  '독일문화의이해': 'B+',
+  '기초수학': 'D+',
+  '영어회화': 'C+',
+  '인지발달심리학': 'A+',
+}
+
+const getExamResult = (scores,requiredClasses) => {
+  let score = Object.values(scores);
+  /*score = ['A+', 'A', 'B+', 'B', 'C+', 'C', 'D+', 'D', 'F'] 이렇게 나온다.*/
+  const scoreValue = score.map(item => 
+  {
+        if(item === 'A+') {
+        return item = 4.5;
+        } else if(item === 'A') {
+         return item = 4;
+        } else if(item === 'B+') {
+         return item = 3.5;
+        } else if(item === 'B') {
+          return item = 3;
+        } else if(item === 'C+') {
+         return item = 2.5;
+        } else if(item === 'C') {
+         return item = 2;
+        } else if(item === 'D+') {
+        return  item = 1.5;
+        } else if(item === 'D') {
+         return item = 1;
+        } else {
+         return item = 0;
+        } }//rootscore=[ 2, 3, 3.5, 1.5, 2.5, 4.5 ] 이렇게나옴
+                             );
+  const scoreKey = Object.keys(scores);
+  /*['생활속의회계','논리적글쓰기','독일문화의이해','기초수학','영어회화','인지발달심리학'] */
+   // return scoreKey;여기주석풀고 런하면 콘솔답나온다
+    // return scoreKey
+
+  
+    const result = {};
+    for(let i = 0; i < scoreKey.length; i++) {
+      result.scoreKey[i] = scoreValue[i];
+    };
+  //   //함수에 들어온 scores인자 키와 값
+  //   for(let j = 0; j < requiredClasses.length; j++) {
+  //     if(requiredClasses[j] !== scoreKey[j]) {
+  //       result.requiredClasses[j] = 0;
+  //     }
+  //   }
+
+  return result;
+}
+console.log(getExamResult(obj2,obj2 ));
+
+module.exports = {getExamResult}
+    </script>
+</body>
+</html>
