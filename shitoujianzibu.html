@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        function rockPaperScissors(player1, player2) {
-//  예시:
-  if ( (player1 === "가위" && player2 === "보" ) || (player1 === "가위" && player2 === "가위") ) {
-    result = "player1";
-  } else if ( (player1 === "바위" && player2 === "가위" ) || (player1 === "바위" && player2 === "바위") ) {
-    result = "player1";
-  } else if ( (player1 === "보" && player2 === "바위" ) || (player1 === "보" && player2 === "보") ) {
-    result = "player1";
-  } else {
-    result = "player2";
-  }
-}
+      debugger;
+      function rockPaperScissors(player1, player2) {
+        //  예시:
+        if (
+          (player1 === '가위' && player2 === '보') ||
+          (player1 === '가위' && player2 === '가위')
+        ) {
+          result = 'player1';
+        } else if (
+          (player1 === '바위' && player2 === '가위') ||
+          (player1 === '바위' && player2 === '바위')
+        ) {
+          result = 'player1';
+        } else if (
+          (player1 === '보' && player2 === '바위') ||
+          (player1 === '보' && player2 === '보')
+        ) {
+          result = 'player1';
+        } else {
+          result = 'player2';
+        }
+      }
     </script>
-</body>
+  </body>
 </html>
