@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Assignment - 다음 함수 안에 코드를 구현하세요
+        debugger
+const obj2 = {
+  '생활속의회계': 'C',
+  '논리적글쓰기': 'B',
+  '독일문화의이해': 'B+',
+  '기초수학': 'D+',
+  '영어회화': 'C+',
+  '인지발달심리학': 'A+',
+}
+const arr3 = ['영어회화', '기초수학', '공학수학', '컴퓨터과학개론']
+const getExamResult = (scores,requiredClasses) => {
+  const data = {
+    'A+' : 4.5,
+    'A' : 4,
+    'B+' : 3.5,
+    'B' : 3,
+    'C+' : 2.5,
+    'C' : 2,
+    'D+' : 1.5,
+    'D' : 1,
+    'F' : 0,
+  };
+   for(let key in scores){
+     scores[key] = data[scores[key]]
+   };
+    /*
+    '생활속의회계': 2,
+    '논리적글쓰기': 3,
+    '독일문화의이해': 3.5,
+    '기초수학': 1.5,
+    '영어회화': 2.5,
+    '인지발달심리학': 4.5,
+    */
+   let j = 0
+      
+      for(let i = 0; i < requiredClasses.length; i++) {
+      	let newKey = object.keys(scores).includes(requiredClasses[i])
+        if(!newKey){
+          scores[requiredClasses[j]]= 0;
+        };
+        j++
+      };
+//scores[requiredClasses[3]] = 0
+  	 //'컴퓨터과학개론' : 1 이거 된다?
+
+  
+  return scores;
+}
+console.log(getExamResult(obj2,arr3));
+
+//module.exports = {getExamResult}
+    </script>
+</body>
+</html>
